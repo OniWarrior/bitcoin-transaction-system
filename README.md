@@ -21,5 +21,10 @@ utilize for api calls. The database that will be used is a Postgres database.
 heroku will be used for database and api deployment. For the front-end, deployment is most likely going to be vercel.
 Will update this README when final decision is made.
 
+# Note:
+This repository represents the Front-End of this application.
+The Back-End of this application will be in a different repository.
+
+
  
   
