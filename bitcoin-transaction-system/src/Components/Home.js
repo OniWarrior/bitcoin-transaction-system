@@ -14,8 +14,8 @@ const Home = () => {
                     <p>or you're a trader that has to take care of clients bitcoin investment needs,</p>
                     <p>this application will provide an easy-to-use user interface and other</p>
                     <p>utilities to make investment choices in bitcoin easy and seamless.</p>
-
                 </main>
+                <div className="trading-img"></div>
 
 
             </div>
