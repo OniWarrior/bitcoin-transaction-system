@@ -13,5 +13,10 @@ const UnsignedNavigation = () => {
         push('/Login')
     }
 
+    const goSignup = (e) => {
+        e.preventDefault()
+        push('/Signup')
+    }
+
 
 }
