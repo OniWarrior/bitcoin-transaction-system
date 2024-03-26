@@ -18,5 +18,11 @@ const UnsignedNavigation = () => {
         push('/Signup')
     }
 
+    return (
+        <div className="nav-container">
+
+        </div>
+    )
+
 
 }
