@@ -1,9 +1,11 @@
 import React from "react";
 import "../Styles/Home.css";
+import UnsignedNavigation from '../Components/UnsignedNavigation';
 
 const Home = () => {
     return (
         <div>
+            <UnsignedNavigation />
             <div className="home-container">
 
 
