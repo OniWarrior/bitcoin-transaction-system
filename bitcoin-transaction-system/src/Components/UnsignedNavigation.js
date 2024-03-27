@@ -1,8 +1,9 @@
 import React from "react"
-import { useHistory } from "react-router"
+import { useNavigate } from "react-router"
+import '../Styles/Nav.css'
 
 const UnsignedNavigation = () => {
-    const { push } = useHistory()
+    const { push } = useNavigate()
     const goHome = (e) => {
         e.preventDefault()
         push('/')
@@ -21,7 +22,9 @@ const UnsignedNavigation = () => {
     return (
         <div className="nav-container">
             <div className="row-nav">
-
+                <button className="button-home" onClick={goHome}></button>
+                <button className="button-login" onClick={goLogin}></button>
+                <button className="button-signup" onClick={goSignup}></button>
             </div>
 
         </div>
@@ -29,3 +32,5 @@ const UnsignedNavigation = () => {
 
 
 }
+
+export default UnsignedNavigation;
