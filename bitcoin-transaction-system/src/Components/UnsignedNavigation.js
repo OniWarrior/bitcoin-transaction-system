@@ -3,20 +3,20 @@ import { useNavigate } from "react-router"
 import '../Styles/Nav.css'
 
 const UnsignedNavigation = () => {
-    const { push } = useNavigate()
+    const navigate = useNavigate()
     const goHome = (e) => {
         e.preventDefault()
-        push('/')
+        navigate('/')
     }
 
     const goLogin = (e) => {
         e.prevetDefault()
-        push('/Login')
+        navigate('/Login')
     }
 
     const goSignup = (e) => {
         e.preventDefault()
-        push('/Signup')
+        navigate('/Signup')
     }
 
     return (
