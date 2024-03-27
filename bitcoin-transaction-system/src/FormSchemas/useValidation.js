@@ -14,5 +14,12 @@ const initialErrors = {
 
 export const useValidation = (schema) => {
     const [data, setData] = useState(initialValues)
+    const [errors, setErrors] = useState(initialErrors)
+
+
+    const onInputchange = (event) => {
+        const { name, value } = event.target
+
+    }
 
 }
