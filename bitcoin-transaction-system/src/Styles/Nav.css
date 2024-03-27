@@ -1,0 +1,55 @@
+
+.button-home{
+   background-image:url('../Assets/home-icon.png');
+   background-color: black;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:auto;
+   background-attachment: scroll;
+   
+   height:10em;
+   width:10em;
+   border-radius: 40%;
+   border:none;
+}
+
+.button-login{
+    background-image:url('../Assets/login-icon.png');
+   background-color: black;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:auto;
+   background-attachment: scroll;
+   
+   height:10em;
+   width:10em;
+   border-radius: 40%;
+   border:none;
+
+}
+
+.button-signup{
+    background-image:url('../Assets/signup-icon.png');
+   background-color: black;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:auto;
+   background-attachment: scroll;
+   
+   height:10em;
+   width:10em;
+   border-radius: 40%;
+   border:none;
+}
+
+.row-nav{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;  
+
+   
+}
+
+.nav-container{
+    margin-bottom: 5%;
+}
