@@ -24,6 +24,9 @@ export const useValidation = (schema) => {
             .then(() => {
                 setErrors({ ...errors, [name]: "" })
             })
+            .catch(err => {
+                setErrors({ ...errors, [name]: err.errors[0] })
+            })
 
     }
 
