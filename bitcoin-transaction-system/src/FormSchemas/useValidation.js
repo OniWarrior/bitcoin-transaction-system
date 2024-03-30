@@ -17,7 +17,7 @@ export const useValidation = (schema) => {
     const [errors, setErrors] = useState(initialErrors)
 
 
-    const onInputchange = (event) => {
+    const onInputChange = (event) => {
         const { name, value } = event.target
         yup.reach(schema, name)
             .validate(value)
@@ -28,6 +28,13 @@ export const useValidation = (schema) => {
                 setErrors({ ...errors, [name]: err.errors[0] })
             })
 
-    }
+        setData({
+            ...data,
+            [name]: value
+        })
+
+    };
+
+    return [data, errors, onInputChange]
 
 }
