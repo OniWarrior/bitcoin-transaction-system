@@ -23,7 +23,22 @@ const Login = (props) => {
         setLogin(event, LoginFormSchema)
     }
 
+    const handleDisabled = (e) => {
+        e.preventDefault()
+        if (login.email.length >= 30 && login.password.length >= 5) {
+            setDisabled(() => ({
+                disabled: !disabled
 
+            }))
+        }
+        else {
+            setDisabled(() => ({
+                disabled: disabled
+            }))
+        }
+
+
+    }
 
 
 
