@@ -62,6 +62,21 @@ const Login = (props) => {
                         <p>{errors.email}</p>
                     </div>
 
+                    <label>
+                        Password:
+                        <input
+                            id='password'
+                            type='password'
+                            name='password'
+                            placeholder='password'
+                            required
+                            onChange={change}
+                        />
+                    </label>
+                    <div className='errors'>
+                        <p>{errors.password}</p>
+                    </div>
+
 
 
                 </Form>
