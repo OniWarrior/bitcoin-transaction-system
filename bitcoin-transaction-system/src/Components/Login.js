@@ -77,7 +77,13 @@ const Login = (props) => {
                         <p>{errors.password}</p>
                     </div>
 
-                    <button type='submit' className='log-submit'>Login</button>
+                    <button
+                        type='submit'
+                        className='log-submit'
+                        disabled={handleDisabled}
+                    >
+                        Login
+                    </button>
 
 
 
@@ -94,3 +100,5 @@ const Login = (props) => {
 
 
 export default Login
+
+//TODO map to state
