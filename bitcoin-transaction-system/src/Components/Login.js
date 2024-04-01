@@ -1,6 +1,6 @@
 import React from 'react'
 import '../Styles/Login.css'
-import { Form, Link } from 'react-router-dom'
+import { Form } from 'react-router-dom'
 import LoginFormSchema from '../FormSchemas/LoginFormSchema'
 import { useValidation } from '../Hooks/useValidation.js'
 import { useNavigate } from 'react-router-dom'
@@ -77,6 +77,8 @@ const Login = (props) => {
                         <p>{errors.password}</p>
                     </div>
 
+                    <button type='submit' className='log-submit'>Login</button>
+
 
 
                 </Form>
@@ -89,3 +91,6 @@ const Login = (props) => {
 
 
 }
+
+
+export default Login
