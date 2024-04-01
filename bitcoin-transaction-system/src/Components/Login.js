@@ -1,7 +1,6 @@
 import React from 'react'
 import '../Styles/Login.css'
 import { Form, Link } from 'react-router-dom'
-import UnsignedNavigation from './UnsignedNavigation'
 import LoginFormSchema from '../FormSchemas/LoginFormSchema'
 import { useValidation } from '../Hooks/useValidation.js'
 import { useNavigate } from 'react-router-dom'
@@ -47,6 +46,23 @@ const Login = (props) => {
             <div className='login-container'>
                 <Form className='form-container'>
                     <h2>Login</h2>
+
+                    <label>
+                        Email:
+                        <input
+                            id='email'
+                            type='text'
+                            name='email'
+                            placeholder='email'
+                            required
+                            onChange={change}
+                        />
+                    </label>
+                    <div className='errors'>
+                        <p>{errors.email}</p>
+                    </div>
+
+
 
                 </Form>
             </div>
