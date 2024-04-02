@@ -3,6 +3,15 @@ import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
+import logger from 'redux-logger'
+import thunk from 'redux-thunk'
+import { Provider } from 'react-redux';
+import { applyMiddleware } from 'redux'
+import { configureStore } from '@reduxjs/toolkit'
+
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
