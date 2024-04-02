@@ -2,6 +2,7 @@ import React from "react"
 import { useNavigate } from "react-router"
 import '../Styles/Nav.css'
 
+
 const UnsignedNavigation = () => {
     const navigate = useNavigate()
     const goHome = (e) => {
@@ -10,7 +11,7 @@ const UnsignedNavigation = () => {
     }
 
     const goLogin = (e) => {
-        e.prevetDefault()
+        e.preventDefault()
         navigate('/Login')
     }
 

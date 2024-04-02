@@ -25,6 +25,10 @@ Will update this README when final decision is made.
 This repository represents the Front-End of this application.
 The Back-End of this application will be in a different repository.
 
+# Install locally
+To install the application locally, git clone to personal machine then
+cd into the project directory and npm i to install.
+
 
  
   
