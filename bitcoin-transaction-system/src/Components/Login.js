@@ -41,14 +41,16 @@ const Login = (props) => {
 
     }
 
-    // TODO : const onForm Submit
+    const onFormSubmit = () => {
+        props.postLogin(login, navigate)
+    }
 
     return (
         <div>
             <UnsignedNavigation />
             <div className='login-box'>
                 <div className='login-container'>
-                    <Form className='form-container'>
+                    <Form className='form-container' onSubmitCapture={onFormSubmit}>
                         <h2>Login</h2>
 
                         <div className='input-group'>
