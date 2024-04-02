@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import UnsignedNavigation from './UnsignedNavigation.js'
+import { postLogin } from '../State/Actions/LoginActions.js'
 //TODO postLogin
 
 
@@ -40,14 +41,16 @@ const Login = (props) => {
 
     }
 
-    // TODO : const onForm Submit
+    const onFormSubmit = () => {
+        props.postLogin(login, navigate)
+    }
 
     return (
         <div>
             <UnsignedNavigation />
             <div className='login-box'>
                 <div className='login-container'>
-                    <Form className='form-container'>
+                    <Form className='form-container' onSubmitCapture={onFormSubmit}>
                         <h2>Login</h2>
 
                         <div className='input-group'>
@@ -105,6 +108,17 @@ const Login = (props) => {
 }
 
 
-export default Login
+const mapStateToProps = (state) => {
+    return {
+        login: state.loginReducer.login,
+        loading: state.loginReducer.loading,
+        error: state.loginReducer.error
+    }
+}
 
-//TODO map to state
+const mapDispatchToProps = { postLogin }
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
