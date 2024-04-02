@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import UnsignedNavigation from './UnsignedNavigation.js'
+import { postLogin } from '../State/Actions/LoginActions.js'
 //TODO postLogin
 
 
@@ -105,6 +106,17 @@ const Login = (props) => {
 }
 
 
-export default Login
+const mapStateToProps = (state) => {
+    return {
+        login: state.loginReducer.login,
+        loading: state.loginReducer.loading,
+        error: state.loginReducer.error
+    }
+}
 
-//TODO map to state
+const mapDispatchToProps = { postLogin }
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
