@@ -13,4 +13,7 @@ export const register = (signup, navigate) => (dispatch) => {
             navigate('/Login')
 
         })
+        .catch(err => {
+            dispatch({ type: SIGNUP_FAILURE, payload: err.message })
+        })
 }
