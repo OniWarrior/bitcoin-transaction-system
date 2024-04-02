@@ -1,7 +1,7 @@
 import React from "react"
 import { useNavigate } from "react-router"
 import '../Styles/Nav.css'
-import Login from "../Components/Login.js"
+
 
 const UnsignedNavigation = () => {
     const navigate = useNavigate()
@@ -11,7 +11,7 @@ const UnsignedNavigation = () => {
     }
 
     const goLogin = (e) => {
-        e.prevetDefault()
+        e.preventDefault()
         navigate('/Login')
     }
 

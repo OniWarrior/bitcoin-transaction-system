@@ -1,11 +1,12 @@
 import React from 'react'
 import '../Styles/Login.css'
-import { Form } from 'react-router-dom'
+import { Form } from 'react-bootstrap'
 import LoginFormSchema from '../FormSchemas/LoginFormSchema'
 import { useValidation } from '../Hooks/useValidation.js'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { connect } from 'react-redux'
+import UnsignedNavigation from './UnsignedNavigation.js'
 //TODO postLogin
 
 
@@ -43,51 +44,56 @@ const Login = (props) => {
 
     return (
         <div>
-            <div className='login-container'>
-                <Form className='form-container'>
-                    <h2>Login</h2>
+            <UnsignedNavigation />
+            <div className='login-box'>
+                <div className='login-container'>
+                    <Form className='form-container'>
+                        <h2>Login</h2>
 
-                    <label>
-                        Email:
-                        <input
-                            id='email'
-                            type='text'
-                            name='email'
-                            placeholder='email'
-                            required
-                            onChange={change}
-                        />
-                    </label>
-                    <div className='errors'>
-                        <p>{errors.email}</p>
-                    </div>
+                        <div className='input-group'>
 
-                    <label>
-                        Password:
-                        <input
-                            id='password'
-                            type='password'
-                            name='password'
-                            placeholder='password'
-                            required
-                            onChange={change}
-                        />
-                    </label>
-                    <div className='errors'>
-                        <p>{errors.password}</p>
-                    </div>
+                            <label className='label-login'>
+                                Email:
+                                <input className='email-box'
+                                    id='email'
+                                    type='text'
+                                    name='email'
+                                    placeholder='email'
+                                    required
+                                    onChange={change}
+                                />
+                            </label>
+                            <div className='errors'>
+                                <p>{errors.email}</p>
+                            </div>
 
-                    <button
-                        type='submit'
-                        className='log-submit'
-                        disabled={handleDisabled}
-                    >
-                        Login
-                    </button>
+                            <label className='label-login'>
+                                Password:
+                                <input
+                                    id='password'
+                                    type='password'
+                                    name='password'
+                                    placeholder='password'
+                                    required
+                                    onChange={change}
+                                />
+                            </label>
+                            <div className='errors'>
+                                <p>{errors.password}</p>
+                            </div>
+                        </div>
+                        <button
+                            type='submit'
+                            className='log-submit'
+                            disabled={handleDisabled}
+                        >
+                            Login
+                        </button>
 
 
 
-                </Form>
+                    </Form>
+                </div>
             </div>
 
         </div>

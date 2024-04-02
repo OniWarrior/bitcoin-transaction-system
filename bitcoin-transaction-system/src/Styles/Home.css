@@ -1,3 +1,8 @@
+
+.home-box{
+    display: flex;
+    justify-content: center;
+}
 .home-container{
     display:flex;
     flex-direction:column;
@@ -7,6 +12,7 @@
     background-repeat:no-repeat;
     background-image: url("../Assets/bitcoin_invest.jpg");
     height:70em;
+    width:80em;
     background-attachment: scroll;
     background-size: cover;
     border:2px solid white;
