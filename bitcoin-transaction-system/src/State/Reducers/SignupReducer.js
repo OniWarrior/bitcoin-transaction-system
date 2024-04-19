@@ -20,7 +20,7 @@ const signupReducer = (state = initialState, action) => {
         case SIGNUP_FAILURE:
             return { ...state, error: action.payload, loading: false }
         default:
-            return;
+            return state;
     }
 }
 
