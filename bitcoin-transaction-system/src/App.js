@@ -13,6 +13,7 @@ function App() {
           <Route exact path="/" Component={Home}></Route>
           <Route path="/Login" Component={Login}></Route>
           <Route path="/Signup" Component={Signup}></Route>
+
         </Routes>
 
       </header>
