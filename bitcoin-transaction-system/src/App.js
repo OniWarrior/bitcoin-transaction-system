@@ -27,6 +27,7 @@ import ManagerDashboard from "./Components/Manager/ManagerDashboard";
 import RetrieveTotDailyTransacs from "./Components/Manager/ManagerRetrieveTotDailyTransacs";
 import RetrieveTotWeeklyTransacs from "./Components/Manager/ManagerRetrieveTotWeeklyTransacs";
 import RetrieveTotMonthlyTransacs from "./Components/Manager/ManagerRetrieveTotMonthlyTransacs";
+import ProtectedRoute from "./Components/Utils/ProtectedRoute";
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
           <Route exact path="/" Component={Home}></Route>
           <Route path="/Login" Component={Login}></Route>
           <Route path="/Signup" Component={Signup}></Route>
+          <ProtectedRoute exact path="/ClientDashboard" Component={ClientDashboard}></ProtectedRoute>
+
+
 
         </Routes>
 
