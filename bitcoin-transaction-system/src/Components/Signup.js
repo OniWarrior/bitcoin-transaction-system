@@ -27,7 +27,9 @@ const Signup = () => {
             signup.state.length <= 15 && signup.userType && 
             signup.email.length <= 30 && signup.password.length >= 5)
         {
-            
+            setDisabled(() => ({
+                disabled: !disabled
+            }))
         }
     }
 }
