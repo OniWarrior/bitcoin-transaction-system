@@ -1,16 +1,8 @@
-import React from "react";
-import { Route, Redirect } from 'react-router'
+import { Navigate } from 'react-router-dom';
 
-const ProtectedRoute = ({ component, ...rest }) => {
-    // if your successful at retrieving the token
-    if (localStorage.getItem('token')) {
-        return (<Route component={component}{...rest} />)  // return the component in question
-
-    }
-    else {
-        return <Redirect to='/Login' /> // failure to get token. redirect to login
-    }
-
-}
+const ProtectedRoute = ({ children }) => {
+    const isAuthenticated = localStorage.getItem('token'); // Assume token storage in localStorage for auth
+    return isAuthenticated ? children : <Navigate to="/Login" replace />;
+};
 
 export default ProtectedRoute

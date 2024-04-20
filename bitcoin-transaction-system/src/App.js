@@ -36,28 +36,29 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Routes>
-          <Route exact path="/" Component={Home}></Route>
-          <Route path="/Login" Component={Login}></Route>
-          <Route path="/Signup" Component={Signup}></Route>
-          <ProtectedRoute exact path="/ClientDashboard" Component={ClientDashboard}></ProtectedRoute>
-          <ProtectedRoute path='/ClientDashboard/BitcoinWallet' Component={BitcoinWallet}></ProtectedRoute>
-          <ProtectedRoute path='/ClientDashboard/BuyBitcoin' Component={BuyBitcoin}></ProtectedRoute>
-          <ProtectedRoute path='/ClientDashboard/SellBitcoin' Component={SellBitcoin}></ProtectedRoute>
-          <ProtectedRoute path='/ClientDashboard/Orders' Component={PastOrders}></ProtectedRoute>
-          <ProtectedRoute path='/ClientDashboard/TransferMoney' Component={TransferMoney}></ProtectedRoute>
-          <ProtectedRoute exact path='/TraderDashboard' Component={TraderDashboard}></ProtectedRoute>
-          <ProtectedRoute path='/TraderDashboard/Cancel-Log' Component={CancelLog}></ProtectedRoute>
-          <ProtectedRoute path='/TraderDashboard/TraderClientSearch' Component={TraderClientSearch}></ProtectedRoute>
-          <ProtectedRoute path='/TraderDashboard/TraderClientSearch/clients/search' Component={FoundClient}></ProtectedRoute>
-          <ProtectedRoute path='/TraderDashboard/TraderClientSearch/clients/:client_id/TraderBuyBitcoin' Component={TraderBuyBitcoin}></ProtectedRoute>
-          <ProtectedRoute path='/TraderDashboard/TraderClientSearch/clients/:client_id/TraderSellBitcoin' Component={TraderSellBitcoin}></ProtectedRoute>
-          <ProtectedRoute path='/TraderDashboard/TraderClientSearch/clients/:client_id/payments-and-transactions' Component={CancelOrderOrTransfer}></ProtectedRoute>
-          <ProtectedRoute exact path='/ManagerDashboard' Component={ManagerDashboard}></ProtectedRoute>
-          <ProtectedRoute path='/ManagerDashboard/total-daily-transactions' Component={RetrieveTotDailyTransacs}></ProtectedRoute>
-          <ProtectedRoute path='/ManagerDashboard/total-weekly-transactions' Component={RetrieveTotWeeklyTransacs}></ProtectedRoute>
-          <ProtectedRoute path='/ManagerDashboard/total-monthly-transactions' Component={RetrieveTotMonthlyTransacs}></ProtectedRoute>
+          <Route path="/" element={<Home />} />
+          <Route path="/Login" element={<Login />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/ClientDashboard" element={<ClientDashboard />} />
+            <Route path="/ClientDashboard/BitcoinWallet" element={<BitcoinWallet />} />
+            <Route path="/ClientDashboard/BuyBitcoin" element={<BuyBitcoin />} />
+            <Route path="/ClientDashboard/SellBitcoin" element={<SellBitcoin />} />
+            <Route path="/ClientDashboard/Orders" element={<PastOrders />} />
+            <Route path="/ClientDashboard/TransferMoney" element={<TransferMoney />} />
+            <Route path="/TraderDashboard" element={<TraderDashboard />} />
+            <Route path="/TraderDashboard/Cancel-Log" element={<CancelLog />} />
+            <Route path="/TraderDashboard/TraderClientSearch" element={<TraderClientSearch />} />
+            <Route path="/TraderDashboard/TraderClientSearch/clients/search" element={<FoundClient />} />
+            <Route path="/TraderDashboard/TraderClientSearch/clients/:client_id/TraderBuyBitcoin" element={<TraderBuyBitcoin />} />
+            <Route path="/TraderDashboard/TraderClientSearch/clients/:client_id/TraderSellBitcoin" element={<TraderSellBitcoin />} />
+            <Route path="/TraderDashboard/TraderClientSearch/clients/:client_id/payments-and-transactions" element={<CancelOrderOrTransfer />} />
+            <Route path="/ManagerDashboard" element={<ManagerDashboard />} />
+            <Route path="/ManagerDashboard/total-daily-transactions" element={<RetrieveTotDailyTransacs />} />
+            <Route path="/ManagerDashboard/total-weekly-transactions" element={<RetrieveTotWeeklyTransacs />} />
+            <Route path="/ManagerDashboard/total-monthly-transactions" element={<RetrieveTotMonthlyTransacs />} />
+          </Route>
         </Routes>
-
       </header>
     </div>
   );
