@@ -9,6 +9,7 @@ const Signup = () => {
     const navigate = useNavigate();
     const [signup, error, setSignup] = useValidation(SignupFormSchema);
 
+    const initialDisabled = true;
 }
 
 export default Signup;
