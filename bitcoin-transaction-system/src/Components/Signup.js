@@ -16,6 +16,19 @@ const Signup = () => {
     const change = (event) => {
         setSignup(event, SignupFormSchema)
     }
+
+    // handler for handling submit button
+    const handleDisabled = (e) => {
+        e.preventDefault()
+        if(signup.firstName && signup.lastName && 
+            signup.phoneNumber && signup.cellNum && 
+            signup.streetAddress && signup.city && 
+            signup.state && signup.userType && 
+            signup.email && signup.password)
+        {
+
+        }
+    }
 }
 
 export default Signup;
