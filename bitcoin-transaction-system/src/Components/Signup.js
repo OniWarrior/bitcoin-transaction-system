@@ -31,6 +31,11 @@ const Signup = () => {
                 disabled: !disabled
             }))
         }
+        else{
+            setDisabled(() => ({
+                disabled: disabled
+            }))
+        }
     }
 }
 
