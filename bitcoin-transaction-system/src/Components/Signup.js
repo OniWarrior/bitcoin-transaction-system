@@ -13,7 +13,7 @@ const Signup = () => {
     const [disabled, setDisabled] = useState(initialDisabled)
 
     const change = (event) => {
-    
+        setSignup(event, SignupFormSchema)
     }
 }
 
