@@ -6,12 +6,13 @@ import SignupFormSchema from '../FormSchemas/SignupFormSchema.js'
 
 
 const Signup = () => {
+    // local variables
     const navigate = useNavigate()
     const [signup, error, setSignup] = useValidation(SignupFormSchema)
-
     const initialDisabled = true
     const [disabled, setDisabled] = useState(initialDisabled)
 
+    // handler for change in signup form
     const change = (event) => {
         setSignup(event, SignupFormSchema)
     }
