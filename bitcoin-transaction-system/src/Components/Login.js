@@ -2,13 +2,13 @@ import React from 'react'
 import '../Styles/Login.css'
 import { Form } from 'react-bootstrap'
 import LoginFormSchema from '../FormSchemas/LoginFormSchema'
-import { useValidation } from '../Hooks/useValidation.js'
+import { useLoginValidation } from '../Hooks/useLoginValidation.js'
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { connect } from 'react-redux'
 import UnsignedNavigation from './UnsignedNavigation.js'
 import { postLogin } from '../State/Actions/LoginActions.js'
-//TODO postLogin
+
 
 
 
@@ -16,7 +16,7 @@ import { postLogin } from '../State/Actions/LoginActions.js'
 
 const Login = (props) => {
     const navigate = useNavigate()
-    const [login, errors, setLogin] = useValidation(LoginFormSchema)
+    const [login, errors, setLogin] = useLoginValidation(LoginFormSchema)
     const initialDisabled = true
     const [disabled, setDisabled] = useState(initialDisabled)
 

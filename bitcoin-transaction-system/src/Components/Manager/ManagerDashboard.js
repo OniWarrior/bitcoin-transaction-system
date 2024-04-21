@@ -2,14 +2,16 @@ import React from "react"
 import '../../Styles/Manager.css'
 import { useNavigate } from "react-router"
 import SignedInNavigation from '../SignedInNavigation'
+import { getTotalDailyTransactions, getTotalWeeklyTransactions, getTotalMonthlyTransactions } from "../../State/Actions/ManagerActions"
+import { connect } from "react-redux"
 
-
-const ManagerDashboard = () => {
+const ManagerDashboard = (props) => {
 
     const navigate = useNavigate()
 
     const goToDaily = (e) => {
         e.preventDefault()
+        props.getTotalDailyTransactions()
         navigate('/ManagerDashboard/total-daily-transactions')
     }
 
@@ -45,4 +47,16 @@ const ManagerDashboard = () => {
 
 }
 
-export default ManagerDashboard
+const mapStateToProps = (state) => {
+    return {
+        totalTransactions: state.managerReducer.totalTransactions,
+        loading: state.managerReducer.loading,
+        error: state.managerReducer.error
+    }
+}
+
+const mapDispatchToProps = { getTotalDailyTransactions, getTotalMonthlyTransactions, getTotalWeeklyTransactions }
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(ManagerDashboard)

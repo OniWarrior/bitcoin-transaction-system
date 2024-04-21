@@ -3,16 +3,34 @@ import * as yup from 'yup'
 
 
 const initialValues = {
+    first_name: '',
+    last_name: '',
+    phone_num: '',
+    cell_num: '',
     email: '',
-    password: ''
+    city: '',
+    state: '',
+    street_addr: '',
+    password: '',
+    zip_code: ''
+
 }
 
 const initialErrors = {
+    first_name: '',
+    last_name: '',
+    phone_num: '',
+    cell_num: '',
     email: '',
-    password: ''
+    city: '',
+    state: '',
+    street_addr: '',
+    password: '',
+    zip_code: ''
+
 }
 
-export const useValidation = (schema) => {
+export const useSignupValidation = (schema) => {
     const [data, setData] = useState(initialValues)
     const [errors, setErrors] = useState(initialErrors)
 
