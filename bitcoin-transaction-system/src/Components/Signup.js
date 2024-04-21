@@ -163,6 +163,21 @@ const Signup = () => {
                             <p>{error.state}</p>
                         </div>
 
+                        <label className='label-street-addr' htmlFor='street_addr'>
+                            Street Addr:
+                            <input className='atreet-addr-box' 
+                               id='street_addr'
+                               type='text'
+                               name='street_addr'
+                               placeholder='Street Address'
+                               onChange={change}
+                            />
+                        </label>
+
+                        <div className='errors'>
+                            <p>{error.street_addr}</p>
+                        </div>
+
                      </div>
 
                   </Form>
