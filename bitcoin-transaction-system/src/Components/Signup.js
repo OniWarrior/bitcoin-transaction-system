@@ -98,6 +98,11 @@ const Signup = () => {
                                />
                         </label>
 
+                        <div className='errors'>
+                            <p>{error.phone_num}</p>
+                            
+                        </div>
+
                      </div>
 
                   </Form>
