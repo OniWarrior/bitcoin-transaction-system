@@ -225,6 +225,15 @@ const Signup = (props) => {
                             <p>{error.user_type}</p>
                         </div>
 
+                        <button
+                        type='submit'
+                        className='log-submit'
+                        disabled={handleDisabled}
+
+                        >
+                        Login
+                        </button>
+
                      </div>
 
                   </Form>
