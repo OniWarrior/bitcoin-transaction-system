@@ -52,6 +52,11 @@ const Signup = () => {
                 <div className='singup-container'>
                 <Form className='form-container' onSubmitCapture={onFormSubmit}>
                     <h2>Signup</h2>
+
+                    <div className='input-group'>
+                        
+                    </div>
+
                 </Form>
 
                 </div>
