@@ -49,7 +49,10 @@ const Signup = () => {
         <div>
             <UnsignedNavigation />
             <div className='signup-box'>
+                <div className='singup-container'>
 
+                </div>
+                
             </div>
         </div>
     )
