@@ -79,7 +79,7 @@ const Signup = () => {
                             name='last_name'
                             placeholder='last name'
                             onChange={change}
-                            />
+                        />
 
                         </label>
 
@@ -95,7 +95,7 @@ const Signup = () => {
                                name='phone_num'
                                placeholder='phone number'
                                onChange={change}
-                               />
+                            />
                         </label>
 
                         <div className='errors'>
@@ -125,13 +125,23 @@ const Signup = () => {
                                name='email'
                                placeholder='email'
                                onChange={change}
-                               />
+                            />
 
                         </label>
 
                         <div className='errors'>
                             <p>{error.email}</p>
                         </div>
+
+                        <label className='label-city' htmlFor='city'>
+                            <input className='city-box'
+                               id='city'
+                               type='text'
+                               name='city'
+                               placeholder='city'
+                               onChange={change}
+                            />
+                        </label>
 
                      </div>
 
