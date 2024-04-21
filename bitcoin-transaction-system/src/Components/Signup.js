@@ -100,8 +100,8 @@ const Signup = () => {
 
                         <div className='errors'>
                             <p>{error.phone_num}</p>
-
                         </div>
+                        
                         <label className='label-cell-num' htmlFor='cell_num'>
                             Cell Number:
                             <input className='cell-num-box'
@@ -112,6 +112,10 @@ const Signup = () => {
                             onChange={change}
                             />
                         </label>
+
+                        <div className='errors'>
+                            <p>{error.cell_num}</p>
+                        </div>
 
                      </div>
 
