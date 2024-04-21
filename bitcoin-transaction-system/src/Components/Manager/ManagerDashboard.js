@@ -18,6 +18,11 @@ const ManagerDashboard = () => {
         navigate('/ManagerDashboard/total-weekly-transactions')
     }
 
+    const goToMonthly = (e) => {
+        e.preventDefault()
+        navigate('/ManagerDashboard/total-monthly-transactions')
+    }
+
 
 
 
