@@ -26,6 +26,12 @@ const ManagerDashboard = () => {
     return (
         <div className="manager-dashboard-container">
             <SignedInNavigation />
+            <div className="dashboard-header">
+                <h2>Manager Dashboard</h2>
+            </div>
+            <div className="manager-card-container">
+
+            </div>
 
 
         </div>
