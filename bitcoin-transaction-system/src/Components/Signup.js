@@ -104,6 +104,13 @@ const Signup = () => {
                         </div>
                         <label className='label-cell-num' htmlFor='cell_num'>
                             Cell Number:
+                            <input className='cell-num-box'
+                            id='cell_num'
+                            type='text'
+                            name='cell_num'
+                            placeholder='cell number'
+                            onChange={change}
+                            />
                         </label>
 
                      </div>
