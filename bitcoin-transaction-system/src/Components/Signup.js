@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { UNSAFE_NavigationContext, useNavigate } from 'react-router-dom'
 import { useValidation } from '../Hooks/useValidation.js'
 import SignupFormSchema from '../FormSchemas/SignupFormSchema.js'
 
@@ -44,6 +44,15 @@ const Signup = () => {
     const onFormSubmit = () => {
         props.register(signup, navigate)
     }
+
+    return(
+        <div>
+            <UnsignedNavigation />
+            <div className='signup-box'>
+
+            </div>
+        </div>
+    )
 }
 
 export default Signup;
