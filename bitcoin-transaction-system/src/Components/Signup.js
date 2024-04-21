@@ -231,7 +231,7 @@ const Signup = (props) => {
                         disabled={handleDisabled}
 
                         >
-                        Login
+                          Register
                         </button>
 
                      </div>
