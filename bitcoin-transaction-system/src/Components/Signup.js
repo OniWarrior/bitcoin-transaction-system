@@ -198,7 +198,7 @@ const Signup = () => {
                             <input className='form-check-input'
                                id='Client'
                                type='radio'
-                               name='Client'
+                               name='user_type'
                                onChange={change}
                             />
                         </label>
