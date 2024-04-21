@@ -73,17 +73,28 @@ const Signup = () => {
 
                         <label className='label_last_name' htmlFor='last_name'>
                             Last Name:
-                            
+                            <input className='last-name-box'
+                            id='last_name'
+                            type='text'
+                            name='last_name'
+                            placeholder='last name'
+                            onChange={change}
+                            />
+
                         </label>
 
-                    </div>
+                        <div className='errors'>
+                            <p>{error.last_name}</p>
+                        </div>
 
-                </Form>
+                     </div>
+
+                  </Form>
 
                 </div>
 
-            </div>
-        </div>
+             </div>
+         </div>
     )
 }
 
