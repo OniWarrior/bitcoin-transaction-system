@@ -203,6 +203,20 @@ const Signup = () => {
                             />
                         </label>
 
+                        <label className='label-user-type' htmlFor='user_type'>
+                            Trader 
+                            <input className='form-check-input'
+                               id='Trader'
+                               type='radio'
+                               name='user_type'
+                               onChange={change}
+                            />
+                        </label>
+
+                        <div className='errors'>
+                            <p>{error.user_type}</p>
+                        </div>
+
                      </div>
 
                   </Form>
