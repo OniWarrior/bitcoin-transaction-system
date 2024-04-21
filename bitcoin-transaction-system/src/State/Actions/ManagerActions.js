@@ -31,4 +31,7 @@ export const getTotalWeeklyTransactions = (startDate, endDate) => (dispatch) => 
         .then(response => {
             dispatch({ type: MANAGER_SUCCESS, payload: response.data })
         })
+        .catch(err => {
+            dispatch({ type: MANAGER_FAILURE, payload: err.message })
+        })
 }
