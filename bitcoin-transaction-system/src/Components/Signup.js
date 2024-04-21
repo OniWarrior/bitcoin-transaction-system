@@ -117,6 +117,10 @@ const Signup = () => {
                             <p>{error.cell_num}</p>
                         </div>
 
+                        <label className='label-email-box' htmlFor='email'>
+                            Email:
+                        </label>
+
                      </div>
 
                   </Form>
