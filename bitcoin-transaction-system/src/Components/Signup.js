@@ -89,6 +89,13 @@ const Signup = () => {
 
                         <label className='label-phone-num' htmlFor='phone_num'>
                             Phone Number:
+                            <input className='phone-num-box'
+                               id='phone_num'
+                               type='text'
+                               name='phone_num'
+                               placeholder='phone number'
+                               onChange={change}
+                               />
                         </label>
 
                      </div>
