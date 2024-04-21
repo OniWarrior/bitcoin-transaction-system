@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const axiosWithAus = () => {
+const axiosWithAuth = () => {
     return axios.create({
         baseURL: 'https://bitcoin-transaction-system-be-72349974fde7.herokuapp.com/',
         headers: {
@@ -10,4 +10,4 @@ const axiosWithAus = () => {
 
 }
 
-export default axiosWithAus
+export default axiosWithAuth
