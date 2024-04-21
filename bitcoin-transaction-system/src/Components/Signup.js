@@ -71,6 +71,11 @@ const Signup = () => {
                             <p>{error.first_name}</p>
                         </div>
 
+                        <label className='label_last_name' htmlFor='last_name'>
+                            Last Name:
+                            
+                        </label>
+
                     </div>
 
                 </Form>
