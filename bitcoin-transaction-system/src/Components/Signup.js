@@ -134,6 +134,7 @@ const Signup = () => {
                         </div>
 
                         <label className='label-city' htmlFor='city'>
+                            City:
                             <input className='city-box'
                                id='city'
                                type='text'
@@ -145,6 +146,21 @@ const Signup = () => {
 
                         <div className='errors'>
                             <p>{error.city}</p>
+                        </div>
+
+                        <label className='label_state' htmlFor='state'>
+                            State:
+                            <input className='state-box'
+                               id='state'
+                               type='text'
+                               name='state'
+                               placeholder='state'
+                               onChange={change}
+                            />
+                        </label>
+
+                        <div className='errors'>
+                            <p>{error.state}</p>
                         </div>
 
                      </div>
