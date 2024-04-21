@@ -87,6 +87,10 @@ const Signup = () => {
                             <p>{error.last_name}</p>
                         </div>
 
+                        <label className='label-phone-num' htmlFor='phone_num'>
+                            Phone Number:
+                        </label>
+
                      </div>
 
                   </Form>
