@@ -165,7 +165,7 @@ const Signup = () => {
 
                         <label className='label-street-addr' htmlFor='street_addr'>
                             Street Addr:
-                            <input className='atreet-addr-box' 
+                            <input className='street-addr-box' 
                                id='street_addr'
                                type='text'
                                name='street_addr'
@@ -176,6 +176,21 @@ const Signup = () => {
 
                         <div className='errors'>
                             <p>{error.street_addr}</p>
+                        </div>
+
+                        <label className='label-zip-code' htmlFor='zip_code'>
+                            Zip Code:
+                            <input className='zip-code-box'
+                               id='zip_code'
+                               type='text'
+                               name='zip_code'
+                               placeholder='zip code'
+                               onChange={change}
+                            />
+                        </label>
+
+                        <div className='errors'>
+                            <p>{error.zip_code}</p>
                         </div>
 
                      </div>
