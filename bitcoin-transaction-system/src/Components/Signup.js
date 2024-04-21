@@ -143,6 +143,10 @@ const Signup = () => {
                             />
                         </label>
 
+                        <div className='errors'>
+                            <p>{error.city}</p>
+                        </div>
+
                      </div>
 
                   </Form>
