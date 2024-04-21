@@ -246,4 +246,18 @@ const Signup = (props) => {
     )
 }
 
-export default Signup;
+
+const mapStateToProps = (state) => {
+    return {
+        login: state.signupReducer.login,
+        loading: state.signupReducer.loading,
+        error: state.signupReducer.error
+    }
+}
+
+const mapDispatchToProps = { register }
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Signup)
+
