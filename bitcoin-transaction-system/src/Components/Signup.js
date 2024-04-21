@@ -1,11 +1,19 @@
-import React, { useState } from 'react'
-import { UNSAFE_NavigationContext, useNavigate } from 'react-router-dom'
-import { useValidation } from '../Hooks/useValidation.js'
+import React from 'react'
+import '../Styles/Signup.css'
+import { Form } from 'react-bootstrap'
 import SignupFormSchema from '../FormSchemas/SignupFormSchema.js'
+import { useValidation } from '../Hooks/useValidation.js'
+import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { connect } from 'react-redux'
+import UnsignedNavigation from './UnsignedNavigation.js'
+import{register} from '../State/Actions/SignupActions.js'
 
 
 
-const Signup = () => {
+
+
+const Signup = (props) => {
     // local variables
     const navigate = useNavigate()
     const [signup, error, setSignup] = useValidation(SignupFormSchema)
@@ -20,8 +28,8 @@ const Signup = () => {
     // handler for handling submit button
     const handleDisabled = (e) => {
         e.preventDefault()
-        if(signup.firstName.length > 0 && signup.firstName.length <= 20 &&
-            signup.lastName.length > 0 && signup.lastName.length <= 20 && 
+        if(signup.firstName.length > 0 && signup.firstName.length <= 50 &&
+            signup.lastName.length > 0 && signup.lastName.length <= 50 && 
             signup.phoneNumber.length >= 10 && signup.cellNum.length >= 10 && 
             signup.streetAddress.length <= 20 && signup.city.length <= 20 && 
             signup.state.length <= 15 && signup.userType && 
@@ -50,11 +58,11 @@ const Signup = () => {
             <UnsignedNavigation />
             <div className='signup-box'>
                 <div className='singup-container'>
-                <Form className='form-container' onSubmitCapture={onFormSubmit}>
+                    <Form className='form-container' onSubmitCapture={onFormSubmit}>
                     <h2>Signup</h2>
 
                     <div className='input-group'>
-                        <label className='label-first-name' htmlFor='first_name'>
+                        <label className='label-input-group' htmlFor='first_name'>
                            First Name:
                            <input className='first-name-box'
                               id="first_name"
@@ -71,7 +79,7 @@ const Signup = () => {
                             <p>{error.first_name}</p>
                         </div>
 
-                        <label className='label_last_name' htmlFor='last_name'>
+                        <label className='label-input-group' htmlFor='last_name'>
                             Last Name:
                             <input className='last-name-box'
                             id='last_name'
@@ -87,7 +95,7 @@ const Signup = () => {
                             <p>{error.last_name}</p>
                         </div>
 
-                        <label className='label-phone-num' htmlFor='phone_num'>
+                        <label className='label-input-group' htmlFor='phone_num'>
                             Phone Number:
                             <input className='phone-num-box'
                                id='phone_num'
@@ -102,7 +110,7 @@ const Signup = () => {
                             <p>{error.phone_num}</p>
                         </div>
                         
-                        <label className='label-cell-num' htmlFor='cell_num'>
+                        <label className='label-input-group' htmlFor='cell_num'>
                             Cell Number:
                             <input className='cell-num-box'
                                id='cell_num'
@@ -117,7 +125,7 @@ const Signup = () => {
                             <p>{error.cell_num}</p>
                         </div>
 
-                        <label className='label-email-box' htmlFor='email'>
+                        <label className='label-input-group' htmlFor='email'>
                             Email:
                             <input className='email-box'
                                id='email'
@@ -133,7 +141,7 @@ const Signup = () => {
                             <p>{error.email}</p>
                         </div>
 
-                        <label className='label-city' htmlFor='city'>
+                        <label className='label-input-group' htmlFor='city'>
                             City:
                             <input className='city-box'
                                id='city'
@@ -148,7 +156,7 @@ const Signup = () => {
                             <p>{error.city}</p>
                         </div>
 
-                        <label className='label_state' htmlFor='state'>
+                        <label className='label-input-group' htmlFor='state'>
                             State:
                             <input className='state-box'
                                id='state'
@@ -163,7 +171,7 @@ const Signup = () => {
                             <p>{error.state}</p>
                         </div>
 
-                        <label className='label-street-addr' htmlFor='street_addr'>
+                        <label className='label-input-group' htmlFor='street_addr'>
                             Street Addr:
                             <input className='street-addr-box' 
                                id='street_addr'
@@ -178,7 +186,7 @@ const Signup = () => {
                             <p>{error.street_addr}</p>
                         </div>
 
-                        <label className='label-zip-code' htmlFor='zip_code'>
+                        <label className='label-input-group' htmlFor='zip_code'>
                             Zip Code:
                             <input className='zip-code-box'
                                id='zip_code'
@@ -193,7 +201,7 @@ const Signup = () => {
                             <p>{error.zip_code}</p>
                         </div>
 
-                        <label className='label-user-type' htmlFor='user_type'>
+                        <label className='label-input-group' htmlFor='user_type'>
                             Client 
                             <input className='form-check-input'
                                id='Client'
@@ -203,7 +211,7 @@ const Signup = () => {
                             />
                         </label>
 
-                        <label className='label-user-type' htmlFor='user_type'>
+                        <label className='label-input-group' htmlFor='user_type'>
                             Trader 
                             <input className='form-check-input'
                                id='Trader'
