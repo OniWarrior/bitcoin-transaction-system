@@ -2,7 +2,7 @@
     box-shadow:2px 2px 2px 2px rgba(128,128,128,0.8);
     min-width: 30em;
     max-width:35em;
-    max-height: 20em;
+    max-height: 35em;
     background-color: rgba(0,0,0,0.7);
     display:flex;
     flex-direction: column;
@@ -46,9 +46,42 @@
     padding-left:10%;
 }
 
-.email-box{
-    margin-left:10%;
+.first-name-box{
+    margin-left: 10%;
 }
+
+.last-name-box{
+    margin-left: 10%;
+}
+
+.phone-num-box{
+    margin-left: 2.5%;
+}
+
+.cell-num-box{
+    margin-left: 6.2%;
+}
+
+.email-box{
+    margin-left:18%;
+}
+
+.city-box{
+    margin-left: 20%;
+}
+
+.state-box{
+    margin-left: 18%;
+}
+
+.street-addr-box{
+    margin-left: 7%
+}
+
+.zip-code-box{
+    margin-left: 11%;
+}
+
 .form-container h2{
     padding-top:5%;
     text-align:center;
