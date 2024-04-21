@@ -50,9 +50,12 @@ const Signup = () => {
             <UnsignedNavigation />
             <div className='signup-box'>
                 <div className='singup-container'>
+                <Form className='form-container' onSubmitCapture={onFormSubmit}>
+
+                </Form>
 
                 </div>
-                
+
             </div>
         </div>
     )
