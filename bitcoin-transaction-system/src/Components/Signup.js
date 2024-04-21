@@ -67,6 +67,10 @@ const Signup = () => {
                            /> 
                         </label>
 
+                        <div className='errors'>
+                            <p>{error.first_name}</p>
+                        </div>
+
                     </div>
 
                 </Form>
