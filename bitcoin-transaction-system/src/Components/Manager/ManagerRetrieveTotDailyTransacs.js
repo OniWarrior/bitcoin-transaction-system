@@ -6,6 +6,12 @@ import { useNavigate } from "react-router"
 
 
 const RetrieveTotDailyTransacs = (props) => {
+    return (
+        <div className="daily-container">
+
+        </div>
+    )
+
 
 }
 
