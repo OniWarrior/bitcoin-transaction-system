@@ -35,3 +35,13 @@ export const getTotalWeeklyTransactions = (startDate, endDate) => (dispatch) => 
             dispatch({ type: MANAGER_FAILURE, payload: err.message })
         })
 }
+
+
+// api call to retrieve total monthly transactions for the manager
+export const getTotalMonthlyTransactions = (month, year) => (dispatch) => {
+    dispatch({ type: MANAGER_START })
+    axiosWithAuth.get('/api/users/total-monthly-transactions', month, year)
+        .then(response => {
+            dispatch({ type: MANAGER_SUCCESS, payload: response.data })
+        })
+}
