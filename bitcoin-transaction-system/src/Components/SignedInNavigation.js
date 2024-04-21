@@ -2,7 +2,7 @@
 import React from "react"
 import { useNavigate, Link } from "react-router"
 import '../Styles/Nav.css'
-import jwt_decode from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 
 
 const SignedInNavigation = () => {
@@ -12,7 +12,7 @@ const SignedInNavigation = () => {
     let user_type = ''
 
     if (token) {
-        const decoded = jwt_decode(token)
+        const decoded = jwtDecode(token)
         user_type = decoded.user_type
     }
 
