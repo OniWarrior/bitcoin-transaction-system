@@ -51,7 +51,7 @@ const Signup = () => {
             <div className='signup-box'>
                 <div className='singup-container'>
                 <Form className='form-container' onSubmitCapture={onFormSubmit}>
-
+                    <h2>Signup</h2>
                 </Form>
 
                 </div>
