@@ -126,8 +126,12 @@ const Signup = () => {
                                placeholder='email'
                                onChange={change}
                                />
-                               
+
                         </label>
+
+                        <div className='errors'>
+                            <p>{error.email}</p>
+                        </div>
 
                      </div>
 
