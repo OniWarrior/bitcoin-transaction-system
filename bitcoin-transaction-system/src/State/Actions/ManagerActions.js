@@ -1,0 +1,6 @@
+import axios from "axios";
+
+const MANAGER_START = 'MANAGER_START'
+const MANAGER_SUCCESS = 'MANAGER_SUCCESS'
+const MANAGER_FAILURE = 'MANAGER_FAILURE'
+
