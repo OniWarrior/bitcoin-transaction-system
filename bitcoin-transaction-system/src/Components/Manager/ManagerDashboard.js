@@ -13,6 +13,13 @@ const ManagerDashboard = () => {
         navigate('/ManagerDashboard/total-daily-transactions')
     }
 
+    const goToWeekly = (e) => {
+        e.preventDefault()
+        navigate('/ManagerDashboard/total-weekly-transactions')
+    }
+
+
+
 
 
 }
