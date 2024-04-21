@@ -23,6 +23,14 @@ const ManagerDashboard = () => {
         navigate('/ManagerDashboard/total-monthly-transactions')
     }
 
+    return (
+        <div className="manager-dashboard-container">
+            <SignedInNavigation />
+
+
+        </div>
+    )
+
 
 
 
