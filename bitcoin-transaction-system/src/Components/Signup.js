@@ -28,12 +28,13 @@ const Signup = (props) => {
     // handler for handling submit button
     const handleDisabled = (e) => {
         e.preventDefault()
-        if(signup.firstName.length > 0 && signup.firstName.length <= 50 &&
-            signup.lastName.length > 0 && signup.lastName.length <= 50 && 
-            signup.phoneNumber.length >= 10 && signup.cellNum.length >= 10 && 
-            signup.streetAddress.length <= 20 && signup.city.length <= 20 && 
-            signup.state.length <= 15 && signup.userType && 
-            signup.email.length <= 30 && signup.password.length >= 5)
+        if(signup.first_name.length > 0 && signup.first_name.length <= 50 &&
+            signup.last_name.length > 0 && signup.last_name.length <= 50 && 
+            signup.phone_num.length >= 10 && signup.cell_num.length >= 10 && 
+            signup.street_addr.length <= 20 && signup.city.length <= 20 && 
+            signup.state.length <= 15 && signup.user_type && 
+            signup.email.length <= 30 && signup.zip_code===5 && signup.password.length >= 5
+            && signup.password.length <=12)
         {
             setDisabled(() => ({
                 disabled: !disabled

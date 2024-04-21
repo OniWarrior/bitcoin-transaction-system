@@ -2,23 +2,23 @@ import * as yup from 'yup'
 import 'yup-phone'
 
 const SignupFormSchema = yup.object().shape({
-    firstName: yup.string()
+    first_name: yup.string()
         .trim()
         .required("First Name is required")
         .max(20, "A maximum of 20 characters for a first name is supported"),
-    lastName: yup.string()
+    last_name: yup.string()
         .trim()
         .required("Last Name is required")
         .max(20, "A maximum of 20 characters for last name is supported"),
-    phoneNumber: yup.string()
+    phone_num: yup.string()
         .trim()
         .phone("Please enter a valid phone number ex(214)-xxx-xxxx")
         .required("Phone number is required"),
-    cellNumber: yup.string()
+    cell_num: yup.string()
         .trim()
         .phone("Please enter a valid cell phone number")
         .required("Cell phone number is required"),
-    streetAddress: yup.string()
+    street_addr: yup.string()
         .trim()
         .required("Street address is required. Please fill out field")
         .max(20, "Address with 20 characters supported"),
@@ -29,7 +29,7 @@ const SignupFormSchema = yup.object().shape({
     state: yup.string()
         .trim()
         .required("State is required. Please select a state."),
-    userType: yup.boolean()
+    user_type: yup.boolean()
         .required("Please select a user type")
         .oneOf(['Client', 'Trader'], "User type must be either 'Client' or 'Trader'"),
     email: yup.string()
