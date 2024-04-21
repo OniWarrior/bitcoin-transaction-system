@@ -193,6 +193,16 @@ const Signup = () => {
                             <p>{error.zip_code}</p>
                         </div>
 
+                        <label className='label-user-type' htmlFor='user_type'>
+                            Client 
+                            <input className='form-check-input'
+                               id='Client'
+                               type='radio'
+                               name='Client'
+                               onChange={change}
+                            />
+                        </label>
+
                      </div>
 
                   </Form>
