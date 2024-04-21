@@ -54,7 +54,19 @@ const Signup = () => {
                     <h2>Signup</h2>
 
                     <div className='input-group'>
-                        
+                        <label className='label-first-name' htmlFor='first_name'>
+                           First Name:
+                           <input className='first-name-box'
+                              id="first_name"
+                              type = "text"
+                              name ="first_name"
+                              placeholder='first name'
+                              required
+                              onChange={change}
+
+                           /> 
+                        </label>
+
                     </div>
 
                 </Form>
