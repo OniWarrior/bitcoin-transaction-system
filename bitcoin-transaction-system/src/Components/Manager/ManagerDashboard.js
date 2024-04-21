@@ -30,7 +30,9 @@ const ManagerDashboard = () => {
                 <h2>Manager Dashboard</h2>
             </div>
             <div className="manager-card-container">
-
+                <button id='go-to-daily-card' className="dashboard-card" onClick={goToDaily}>Daily Transactions</button>
+                <button id='go-to-weekly-card' className="dashboard-card" onClick={goToWeekly}>Weekly Transactions</button>
+                <button id='go-to-monthly-card' className="dashboard-card" onClick={goToMonthly}>Monthly Transactions</button>
             </div>
 
 
