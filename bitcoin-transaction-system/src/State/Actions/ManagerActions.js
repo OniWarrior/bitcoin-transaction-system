@@ -25,9 +25,9 @@ export const getTotalDailyTransactions = (date) => (dispatch) => {
 
 
 // api call to retrieve total weekly transactions for the manager
-export const getTotalWeeklyTransactions = (startDate, endDate) => (dispatch) => {
+export const getTotalWeeklyTransactions = (date) => (dispatch) => {
     dispatch({ type: MANAGER_START })
-    axiosWithAuth.get('/api/users/total-weekly-transactions', startDate, endDate)
+    axiosWithAuth.get('/api/users/total-weekly-transactions', date)
         .then(response => {
             dispatch({ type: MANAGER_SUCCESS, payload: response.data })
         })
@@ -38,9 +38,9 @@ export const getTotalWeeklyTransactions = (startDate, endDate) => (dispatch) => 
 
 
 // api call to retrieve total monthly transactions for the manager
-export const getTotalMonthlyTransactions = (month, year) => (dispatch) => {
+export const getTotalMonthlyTransactions = (date) => (dispatch) => {
     dispatch({ type: MANAGER_START })
-    axiosWithAuth.get('/api/users/total-monthly-transactions', month, year)
+    axiosWithAuth.get('/api/users/total-monthly-transactions', date)
         .then(response => {
             dispatch({ type: MANAGER_SUCCESS, payload: response.data })
         })

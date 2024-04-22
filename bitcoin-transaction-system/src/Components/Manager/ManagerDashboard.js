@@ -4,24 +4,47 @@ import { useNavigate } from "react-router"
 import SignedInNavigation from '../SignedInNavigation'
 import { getTotalDailyTransactions, getTotalWeeklyTransactions, getTotalMonthlyTransactions } from "../../State/Actions/ManagerActions"
 import { connect } from "react-redux"
+import TotalDailyFormSchema from '../../FormSchemas/TotalDailyFormSchema'
+import TotalWeeklyFormSchema from '../../FormSchemas/TotalWeeklyFormSchema'
+import TotalMonthlyFormSchema from '../../FormSchemas/TotalMonthlyFormSchema'
+import { useDailyValidation } from '../../Hooks/useDailyValidation'
+import { useWeeklyValidation } from '../../Hooks/useWeeklyValidation'
+import { useMonthlyValidation } from '../../Hooks/useMonthlyValidation'
+import { useState } from 'react'
 
 const ManagerDashboard = (props) => {
 
     const navigate = useNavigate()
 
+    // state vars for the daily, weekly, monthly forms and buttons
+    const [daily, dailyError, setDaily] = useDailyValidation(TotalDailyFormSchema)
+    const [weekly, weeklyError, setWeekly] = useWeeklyValidation(TotalWeeklyFormSchema)
+    const [monthly, monthlyError, setMonthly] = useMonthlyValidation(TotalMonthlyFormSchema)
+    const initialDailyDisabled = true
+    const initialWeeklyDisabled = true
+    const initialMonthlyDisabled = true
+    const [dailyDisabled, setDailyDisabled] = useState(initialDailyDisabled)
+    const [weeklyDisabled, setWeeklyDisabled] = useState(initialWeeklyDisabled)
+    const [monthlyDisabled, setMonthlyDisabled] = useState(initialMonthlyDisabled)
+
+
+
+
     const goToDaily = (e) => {
         e.preventDefault()
-        props.getTotalDailyTransactions()
+        props.getTotalDailyTransactions(daily)
         navigate('/ManagerDashboard/total-daily-transactions')
     }
 
     const goToWeekly = (e) => {
         e.preventDefault()
+        props.getTotalWeeklyTransactions(weekly)
         navigate('/ManagerDashboard/total-weekly-transactions')
     }
 
     const goToMonthly = (e) => {
         e.preventDefault()
+        props.getTotalMonthlyTransactions(monthly)
         navigate('/ManagerDashboard/total-monthly-transactions')
     }
 

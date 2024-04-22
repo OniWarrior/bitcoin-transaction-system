@@ -64,7 +64,7 @@ const SignedInNavigation = () => {
             return (
                 <div className="nav-container">
                     <div className="row-nav">
-                        <button className="button-home" onClick={goToDashboard}></button>
+                        <button className="button-dash" onClick={goToDashboard}></button>
                         <button className="button-buy" onClick={goToBuy}></button>
                         <button className="button-sell" onClick={goToSell}></button>
                         <button className="button-wallet" onClick={goToWallet}></button>
@@ -114,28 +114,10 @@ const SignedInNavigation = () => {
             }
 
 
-            const goToTotDaily = (e) => {
-                e.preventDefault()
-                navigate('/ManagerDashboard/total-daily-transactions')
-            }
-
-            const goToTotWeekly = (e) => {
-                e.preventDefault()
-                navigate('/ManagerDashboard/total-weekly-transactions')
-            }
-
-            const goToTotMonthly = (e) => {
-                e.preventDefault()
-                navigate('/ManagerDashboard/total-monthly-transactions')
-            }
-
             return (
                 <div className="nav-container">
                     <div className="row-nav">
                         <button className="button-home" onClick={goToManDashboard}></button>
-                        <button className="button-daily" onClick={goToTotDaily}></button>
-                        <button className="button-weekly" onClick={goToTotWeekly}></button>
-                        <button className="button-monthly" onClick={goToTotMonthly}></button>
                         <button className="button-log-out" onClick={logOut}></button>
                     </div>
 

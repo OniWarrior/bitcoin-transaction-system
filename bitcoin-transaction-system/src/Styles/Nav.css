@@ -42,6 +42,121 @@
    border:none;
 }
 
+.button-buy{
+    background-image: url('../Assets/buybitcoinimg.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+.button-sell{
+    background-image: url('../Assets/sellbitcoin.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+
+}
+
+.button-wallet{
+    background-image: url('../Assets/bitcoinWallet.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+.button-transfer{
+    background-image: url('../Assets/transfermoney.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+.button-order{
+    background-image: url('../Assets/pastordersimg.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+.button-dash{
+    background-image: url('../Assets/dashboardimg.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+.button-search{
+    background-image: url('../Assets/clientsearchimg.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+.button-cancel-log{
+    background-image: url('../Assets/cancelorderlogimg.png');
+    background-color:white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-attachment: scroll;
+
+    height:10em;
+    width:10em;
+    border-radius:40%;
+    border:none;
+}
+
+
+
 .row-nav{
     display:flex;
     flex-direction: row;
