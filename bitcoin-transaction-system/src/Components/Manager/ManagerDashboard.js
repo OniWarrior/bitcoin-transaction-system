@@ -30,19 +30,21 @@ const ManagerDashboard = (props) => {
 
 
 
-
+    // handler to submit daily form for total daily transacs
     const goToDaily = (e) => {
         e.preventDefault()
         props.getTotalDailyTransactions(daily, navigate)
 
     }
 
+    // handler to submit weekly form for total weekly transacs
     const goToWeekly = (e) => {
         e.preventDefault()
         props.getTotalWeeklyTransactions(weekly, navigate)
 
     }
 
+    // handler to submit monthly form for total monthly transacs
     const goToMonthly = (e) => {
         e.preventDefault()
         props.getTotalMonthlyTransactions(monthly, navigate)
@@ -58,6 +60,11 @@ const ManagerDashboard = (props) => {
             <div className="manager-card-container">
                 <div className="manager-card">
                     <Form className="form-container" onSubmitCapture={goToDaily}>
+                        <h2>Total Daily Transactions</h2>
+                        <div className="input-group">
+
+
+                        </div>
 
                     </Form>
 
@@ -65,6 +72,9 @@ const ManagerDashboard = (props) => {
 
                 <div className="manager-card">
                     <Form className="form-container" onSubmitCapture={goToWeekly}>
+                        <div className="input-group">
+
+                        </div>
 
                     </Form>
 
@@ -72,6 +82,9 @@ const ManagerDashboard = (props) => {
 
                 <div className="manager-card">
                     <Form className="form-container" onSubmitCapture={goToMonthly}>
+                        <div className="input-group">
+
+                        </div>
 
                     </Form>
 
