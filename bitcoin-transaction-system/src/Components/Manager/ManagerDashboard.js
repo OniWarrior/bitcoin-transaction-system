@@ -11,6 +11,7 @@ import { useDailyValidation } from '../../Hooks/useDailyValidation'
 import { useWeeklyValidation } from '../../Hooks/useWeeklyValidation'
 import { useMonthlyValidation } from '../../Hooks/useMonthlyValidation'
 import { useState } from 'react'
+import { Form } from "react-bootstrap"
 
 const ManagerDashboard = (props) => {
 
@@ -32,20 +33,20 @@ const ManagerDashboard = (props) => {
 
     const goToDaily = (e) => {
         e.preventDefault()
-        props.getTotalDailyTransactions(daily)
-        navigate('/ManagerDashboard/total-daily-transactions')
+        props.getTotalDailyTransactions(daily, navigate)
+
     }
 
     const goToWeekly = (e) => {
         e.preventDefault()
-        props.getTotalWeeklyTransactions(weekly)
-        navigate('/ManagerDashboard/total-weekly-transactions')
+        props.getTotalWeeklyTransactions(weekly, navigate)
+
     }
 
     const goToMonthly = (e) => {
         e.preventDefault()
-        props.getTotalMonthlyTransactions(monthly)
-        navigate('/ManagerDashboard/total-monthly-transactions')
+        props.getTotalMonthlyTransactions(monthly, navigate)
+
     }
 
     return (
@@ -55,9 +56,27 @@ const ManagerDashboard = (props) => {
                 <h2>Manager Dashboard</h2>
             </div>
             <div className="manager-card-container">
-                <button id='go-to-daily-card' className="dashboard-card" onClick={goToDaily}>Daily Transactions</button>
-                <button id='go-to-weekly-card' className="dashboard-card" onClick={goToWeekly}>Weekly Transactions</button>
-                <button id='go-to-monthly-card' className="dashboard-card" onClick={goToMonthly}>Monthly Transactions</button>
+                <div className="manager-card">
+                    <Form className="form-container" onSubmitCapture={goToDaily}>
+
+                    </Form>
+
+                </div>
+
+                <div className="manager-card">
+                    <Form className="form-container" onSubmitCapture={goToWeekly}>
+
+                    </Form>
+
+                </div>
+
+                <div className="manager-card">
+                    <Form className="form-container" onSubmitCapture={goToMonthly}>
+
+                    </Form>
+
+                </div>
+
             </div>
 
 
