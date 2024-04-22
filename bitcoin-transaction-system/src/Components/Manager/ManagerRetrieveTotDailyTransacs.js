@@ -21,10 +21,11 @@ const RetrieveTotDailyTransacs = (props) => {
             <div >
                 <SignedInNavigation />
                 <div className="daily-box">
-                    <h1>Total Daily Transactions</h1>
+
                     <div className="daily-card">
-
-
+                        <h1>Total Daily Transactions</h1>
+                        <hr />
+                        <p>{props.totalTransactions}</p>
                     </div>
                 </div>
 
