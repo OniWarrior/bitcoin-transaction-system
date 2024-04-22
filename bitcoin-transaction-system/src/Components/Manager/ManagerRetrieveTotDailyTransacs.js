@@ -1,5 +1,5 @@
 import React from "react"
-
+import '../../State/ManagerDaily.css'
 import SignedInNavigation from "../SignedInNavigation"
 import { connect } from "react-redux"
 
