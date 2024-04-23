@@ -5,4 +5,14 @@ import {
 } from '../Actions/ClientActions'
 
 
+const initialState = {
+    client: {},
+    loading: '',
+    error: ''
+
+}
+
+
+
+
 
