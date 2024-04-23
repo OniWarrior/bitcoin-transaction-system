@@ -18,18 +18,33 @@ const ClientDashboard = (props) => {
             <div className="client-box">
                 <div className="client-container">
                     <div className="client-card">
+                        <div className="client-card-group">
+
+                        </div>
 
                     </div>
                     <div className="client-card">
+                        <div className="client-card-group">
+
+                        </div>
 
                     </div>
                     <div className="client-card">
+                        <div className="client-card-group">
+
+                        </div>
 
                     </div>
                     <div className="client-card">
+                        <div className="client-card-group">
+
+                        </div>
 
                     </div>
                     <div className="client-card">
+                        <div className="client-card-group">
+
+                        </div>
 
                     </div>
 
