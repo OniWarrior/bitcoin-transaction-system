@@ -1,4 +1,9 @@
 import { connect } from "react-redux"
+import { getBitcoinWallet } from "../../State/Actions/ClientActions";
+import React from "react";
+import SignedInNavigation from "../SignedInNavigation";
+import '../../Styles/ClientDashboard.css'
+import { getPastOrders } from "../../State/Actions/ClientActions";
 
 
 const ClientDashboard = (props) => {
@@ -13,4 +18,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(ClientDashboard)
+
+const mapDispatchToProps = { getBitcoinWallet }
+export default connect(mapStateToProps, mapDispatchToProps)(ClientDashboard)
