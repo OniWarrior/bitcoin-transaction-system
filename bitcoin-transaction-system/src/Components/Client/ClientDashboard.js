@@ -12,9 +12,12 @@ const ClientDashboard = (props) => {
     const navigate = useNavigate()
 
 
-    return (<div className="client-dash">
+    return (
+        <div className="client-dash">
+            <SignedInNavigation />
 
-    </div>
+
+        </div>
 
     )
 
