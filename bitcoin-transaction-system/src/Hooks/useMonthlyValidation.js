@@ -13,7 +13,7 @@ const initialErrors = {
 
 }
 
-export const useSignupValidation = (schema) => {
+export const useMonthlyValidation = (schema) => {
     const [data, setData] = useState(initialValues)
     const [errors, setErrors] = useState(initialErrors)
 

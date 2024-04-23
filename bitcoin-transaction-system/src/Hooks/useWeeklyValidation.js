@@ -32,7 +32,7 @@ const initialErrors = {
 
 
 
-export const useSignupValidation = (schema) => {
+export const useWeeklyValidation = (schema) => {
     const [data, setData] = useState(initialValues)
     const [errors, setErrors] = useState(initialErrors)
 

@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 
-const TotalMonthlyFormSchema = yup.object.shape({
+const TotalMonthlyFormSchema = yup.object().shape({
     month: yup.string()
         .trim()
         .required('Please enter a single value of the month. ex 5 if the month is May'),

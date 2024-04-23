@@ -13,6 +13,21 @@
    border:none;
 }
 
+
+.button-log-out{
+    background-image:url('../Assets/logout-icon.png');
+    background-color: black;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:auto;
+    background-attachment: scroll;
+    
+    height:10em;
+    width:10em;
+    border-radius: 40%;
+    border:none;
+
+}
 .button-login{
     background-image:url('../Assets/login-icon.png');
    background-color: black;
@@ -114,16 +129,16 @@
 }
 
 .button-dash{
-    background-image: url('../Assets/dashboardimg.png');
-    background-color:white;
+    background-image:url('../Assets/dashboardimg.png');
+    background-color: white;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size:auto;
     background-attachment: scroll;
-
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    margin-top:3.3em;
+    height:3.5em;
+    width:3.5em;
+    border-radius: 50%;
     border:none;
 }
 

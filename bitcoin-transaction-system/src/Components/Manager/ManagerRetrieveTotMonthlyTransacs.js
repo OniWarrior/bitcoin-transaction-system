@@ -1,34 +1,29 @@
 import React from "react"
-import '../../State/ManagerMonthly.css'
+import '../../Styles/ManagerMonthly.css'
 import SignedInNavigation from "../SignedInNavigation"
 import { connect } from "react-redux"
 
 
 const RetrieveTotMonthlyTransacs = (props) => {
 
-    if (props.loading) {
-        return (
-            <h1>...Loading</h1>
-        )
-    }
-    else {
-        return (
-            <div >
-                <SignedInNavigation />
-                <div className="daily-box">
 
-                    <div className="daily-card">
-                        <h1>Total Daily Transactions</h1>
-                        <hr />
-                        <p>{props.totalTransactions}</p>
-                    </div>
+    return (
+        <div >
+            <SignedInNavigation />
+            <div className="daily-box">
+
+                <div className="daily-card">
+                    <h1>Total Monthly Transactions</h1>
+                    <hr />
+                    <p>{props.totalTransactions.count}</p>
                 </div>
-
-
             </div>
-        )
 
-    }
+
+        </div>
+    )
+
+
 
 }
 

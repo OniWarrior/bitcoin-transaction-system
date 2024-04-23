@@ -16,7 +16,7 @@ const initialErrors = {
 
 
 
-export const useLoginValidation = (schema) => {
+export const useDailyValidation = (schema) => {
     const [data, setData] = useState(initialValues)
     const [errors, setErrors] = useState(initialErrors)
 

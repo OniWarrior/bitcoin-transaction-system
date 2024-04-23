@@ -22,6 +22,7 @@ const Login = (props) => {
 
     const change = (event) => {
         setLogin(event, LoginFormSchema)
+
     }
 
     const handleDisabled = (e) => {
@@ -41,7 +42,8 @@ const Login = (props) => {
 
     }
 
-    const onFormSubmit = () => {
+    const onFormSubmit = (event) => {
+        event.preventDefault()
         props.postLogin(login, navigate)
     }
 
@@ -50,7 +52,7 @@ const Login = (props) => {
             <UnsignedNavigation />
             <div className='login-box'>
                 <div className='login-container'>
-                    <Form className='form-container' onSubmitCapture={onFormSubmit}>
+                    <Form className='form-container' onSubmit={onFormSubmit}>
                         <h2>Login</h2>
 
                         <div className='input-group'>

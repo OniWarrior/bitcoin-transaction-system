@@ -1,7 +1,7 @@
 import * as yup from 'yup'
 
 
-const TotalDailyFormSchema = yup.object.shape({
+const TotalDailyFormSchema = yup.object().shape({
     day: yup.string()
         .trim()
         .required("Please enter a single value of the date of the day. ex 15 if todays date is the 15th ")
