@@ -21,6 +21,26 @@ const ClientDashboard = (props) => {
         props.getPastOrders(navigate)
     }
 
+    const goToBuyBitcoin = (e) => {
+        e.preventDefault()
+        // switch this redirect after api call for fetching bitcoin is setup.
+        navigate('/ClientDashboard/BuyBitcoin')
+        //TODO place api call to fetch bitcoin price
+    }
+
+    const goToSellBitcoin = (e) => {
+        e.preventDefault()
+        // switch this redirect after api call for fetching bitcoin is setup.
+        navigate('/ClientDashboard/SellBitcoin')
+        //TODO place api call to fetch bitcoin price
+    }
+
+    const goToMoneyTransfer = (e) => {
+        e.preventDefault()
+        navigate('/ClientDashboard/TransferMoney')
+
+    }
+
 
     return (
         <div className="client-dash">
@@ -53,6 +73,9 @@ const ClientDashboard = (props) => {
                             <h2>Buy Bitcoin</h2>
                             <hr />
 
+                            <button className="card-button" onClick={goToBuyBitcoin}>Buy Bitcoin</button>
+
+
                         </div>
 
                     </div>
@@ -60,6 +83,7 @@ const ClientDashboard = (props) => {
                         <div className="client-card-group">
                             <h2>Sell Bitcoin</h2>
                             <hr />
+                            <button className="card-button" onClick={goToSellBitcoin}>Sell Bitcoin</button>
 
                         </div>
 
@@ -68,6 +92,9 @@ const ClientDashboard = (props) => {
                         <div className="client-card-group">
                             <h2>Transfer Money To Trader</h2>
                             <hr />
+
+                            <button className="card-button" onClick={goToMoneyTransfer}>Money Transfer</button>
+
 
                         </div>
 
