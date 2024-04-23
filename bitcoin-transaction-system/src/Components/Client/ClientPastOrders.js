@@ -1,4 +1,6 @@
 import { connect } from "react-redux"
+import { getPastOrders } from "../../State/Actions/ClientActions"
+
 
 const PastOrders = (props) => {
 
@@ -11,5 +13,6 @@ const mapStateToProps = (state) => {
         error: state.clientReducer.error
     }
 }
+const mapDispatchToProps = getPastOrders
 
-export default connect(mapStateToProps)(PastOrders)
+export default connect(mapStateToProps, mapDispatchToProps)(PastOrders)
