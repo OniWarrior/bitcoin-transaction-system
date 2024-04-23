@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-
+import { getBitcoinWallet } from "../../State/Actions/ClientActions";
 
 const BitcoinWallet = (props) => {
 
@@ -12,7 +12,8 @@ const mapStateToProps = (state) => {
         error: state.clientReducer.error
 
     }
-
-
 }
-export default connect(mapStateToProps)(BitcoinWallet)
+
+const mapDispatchToProps = { getBitcoinWallet }
+
+export default connect(mapStateToProps, mapDispatchToProps)(BitcoinWallet)
