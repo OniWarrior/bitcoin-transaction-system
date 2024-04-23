@@ -54,9 +54,9 @@ function App() {
             <Route path="/TraderDashboard/TraderClientSearch/clients/:client_id/TraderSellBitcoin" element={<TraderSellBitcoin />} />
             <Route path="/TraderDashboard/TraderClientSearch/clients/:client_id/payments-and-transactions" element={<CancelOrderOrTransfer />} />
             <Route path="/ManagerDashboard" element={<ManagerDashboard />} />
-            <Route path="/ManagerDashboard/total-daily-transactions" element={<RetrieveTotDailyTransacs />} />
-            <Route path="/ManagerDashboard/total-weekly-transactions" element={<RetrieveTotWeeklyTransacs />} />
-            <Route path="/ManagerDashboard/total-monthly-transactions" element={<RetrieveTotMonthlyTransacs />} />
+            <Route path="/ManagerDashboard/daily" element={<RetrieveTotDailyTransacs />} />
+            <Route path="/ManagerDashboard/weekly" element={<RetrieveTotWeeklyTransacs />} />
+            <Route path="/ManagerDashboard/monthly" element={<RetrieveTotMonthlyTransacs />} />
           </Route>
         </Routes>
       </header>

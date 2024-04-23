@@ -1,18 +1,38 @@
 import { useState } from 'react'
 import * as yup from 'yup'
 
-
 const initialValues = {
-    email: '',
-    password: ''
+    startDate: {
+        day: '',
+        month: '',
+        year: ''
+    },
+
+    endDate: {
+        day: '',
+        month: '',
+        year: ''
+    }
+
 }
 
 const initialErrors = {
-    email: '',
-    password: ''
+    startDate: {
+        day: '',
+        month: '',
+        year: ''
+    },
+
+    endDate: {
+        day: '',
+        month: '',
+        year: ''
+    }
 }
 
-export const useValidation = (schema) => {
+
+
+export const useWeeklyValidation = (schema) => {
     const [data, setData] = useState(initialValues)
     const [errors, setErrors] = useState(initialErrors)
 
