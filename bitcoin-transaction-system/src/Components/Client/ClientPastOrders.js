@@ -12,4 +12,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default PastOrders
+export default connect(mapStateToProps)(PastOrders)
