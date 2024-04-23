@@ -31,3 +31,30 @@ export const getPastOrders = (navigate) => (dispatch) => {
             dispatch({ type: CLIENT_FAILURE, payload: err.message })
         })
 }
+
+// api call to post a buy bitcoin order
+export const postBuyBitcoin = (order, navigate) => (dispatch) => {
+    dispatch({ type: CLIENT_START })
+    axiosWithAuth().post('/api/users/BuyBitcoin', order)
+        .then(response => {
+            dispatch({ type: CLIENT_SUCCESS, payload: response.data })
+            navigate('/ClientDashboard')
+        })
+        .catch(err => {
+            dispatch({ type: CLIENT_FAILURE, payload: err.message })
+        })
+
+}
+
+// api call to post a sell bitcoin order
+export const postSellBitcoin = (order, navigate) => (dispatch) => {
+    dispatch({ type: CLIENT_START })
+    axiosWithAuth().post('/api/users/SellBitcoin', order)
+        .then(response => {
+            dispatch({ type: CLIENT_SUCCESS, payload: response.data })
+            navigate('/ClientDashboard')
+        })
+        .catch(err => {
+            dispatch({ type: CLIENT_FAILURE, payload: err.message })
+        })
+}
