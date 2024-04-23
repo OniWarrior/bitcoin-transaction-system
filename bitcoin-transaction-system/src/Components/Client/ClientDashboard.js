@@ -15,6 +15,11 @@ const ClientDashboard = (props) => {
     return (
         <div className="client-dash">
             <SignedInNavigation />
+            <div className="client-box">
+                <div className="client-container">
+
+                </div>
+            </div>
 
 
         </div>
