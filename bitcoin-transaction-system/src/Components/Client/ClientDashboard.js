@@ -11,6 +11,11 @@ const ClientDashboard = (props) => {
     // local state vars
     const navigate = useNavigate()
 
+    const goToWallet = (e) => {
+        e.preventDefault()
+        props.getBitcoinWallet(navigate)
+    }
+
 
     return (
         <div className="client-dash">
@@ -21,6 +26,9 @@ const ClientDashboard = (props) => {
                         <div className="client-card-group">
                             <h2>Get Bitcoin Wallet</h2>
                             <hr />
+
+                            <button className="card-button" onClick={goToWallet}>Go to Wallet</button>
+
 
                         </div>
 
