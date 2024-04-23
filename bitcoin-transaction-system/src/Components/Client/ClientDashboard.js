@@ -16,6 +16,11 @@ const ClientDashboard = (props) => {
         props.getBitcoinWallet(navigate)
     }
 
+    const goToPastOrders = (e) => {
+        e.preventDefault()
+        props.getPastOrders(navigate)
+    }
+
 
     return (
         <div className="client-dash">
@@ -37,6 +42,8 @@ const ClientDashboard = (props) => {
                         <div className="client-card-group">
                             <h2>Get Past Orders</h2>
                             <hr />
+
+                            <button className="card-button" onClick={goToPastOrders}>Go to Past Orders</button>
 
                         </div>
 
@@ -85,5 +92,5 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = { getBitcoinWallet }
+const mapDispatchToProps = { getBitcoinWallet, getPastOrders }
 export default connect(mapStateToProps, mapDispatchToProps)(ClientDashboard)
