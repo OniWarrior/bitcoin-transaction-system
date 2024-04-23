@@ -12,8 +12,10 @@ const ClientDashboard = (props) => {
     const navigate = useNavigate()
 
 
-    return (
-        
+    return (<div className="client-dash">
+
+    </div>
+
     )
 
 }
