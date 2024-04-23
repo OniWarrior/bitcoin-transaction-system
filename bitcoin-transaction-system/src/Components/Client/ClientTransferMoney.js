@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-
+import { postMoneyTransfer } from "../../State/Actions/ClientActions"
 
 const TransferMoney = (props) => {
 
@@ -13,4 +13,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(TransferMoney)
+const mapDispatchToProps = postMoneyTransfer
+
+export default connect(mapStateToProps, mapDispatchToProps)(TransferMoney)
