@@ -27,4 +27,7 @@ export const getPastOrders = (navigate) => (dispatch) => {
             dispatch({ type: CLIENT_SUCCESS, payload: response.data })
             navigate('ClientDashboard/Orders')
         })
+        .catch(err => {
+            dispatch({ type: CLIENT_FAILURE, payload: err.message })
+        })
 }
