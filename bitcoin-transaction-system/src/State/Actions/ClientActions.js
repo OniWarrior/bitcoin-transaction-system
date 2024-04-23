@@ -18,3 +18,13 @@ export const getBitcoinWallet = (navigate) => (dispatch) => {
         })
 
 }
+
+// api call to retrieve past orders of the client
+export const getPastOrders = (navigate) => (dispatch) => {
+    dispatch({ type: CLIENT_START })
+    axiosWithAuth().get('/api/users/Orders')
+        .then(response => {
+            dispatch({ type: CLIENT_SUCCESS, payload: response.data })
+            navigate('ClientDashboard/Orders')
+        })
+}
