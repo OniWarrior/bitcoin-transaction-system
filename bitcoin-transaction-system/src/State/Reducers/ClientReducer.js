@@ -12,7 +12,12 @@ const initialState = {
 
 }
 
+const clientReducer = (state = initialState, action) => {
 
+}
+
+
+export default clientReducer
 
 
 
