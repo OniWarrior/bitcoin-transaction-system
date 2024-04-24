@@ -71,3 +71,12 @@ export const postMoneyTransfer = (transfer, navigate) => (dispatch) => {
             dispatch({ type: CLIENT_FAILURE, payload: err.message })
         })
 }
+
+
+
+
+
+
+
+
+

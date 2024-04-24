@@ -25,6 +25,8 @@ const ClientDashboard = (props) => {
         e.preventDefault()
         // switch this redirect after api call for fetching bitcoin is setup.
         navigate('/ClientDashboard/BuyBitcoin')
+
+
         //TODO place api call to fetch bitcoin price
     }
 
