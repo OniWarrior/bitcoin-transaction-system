@@ -11,5 +11,9 @@ const initialState={
     error:''
 }
 
+const clientReducer=(state = initialState,action)=>{
+    
+}
 
 
+export default clientReducer
