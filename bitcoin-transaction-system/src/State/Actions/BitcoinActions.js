@@ -7,7 +7,7 @@ export const BITCOIN_FAILURE = 'BITCOIN_FAILURE'
 
 
 // third party api call to fetch bitcoin and other cryptocurrency info
-export const fetchLatestCryptocurrency = (dispatch) => {
+export const fetchLatestCryptocurrency = () => (dispatch) => {
     dispatch({ type: BITCOIN_START });
 
     const config = {
