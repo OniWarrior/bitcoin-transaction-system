@@ -7,8 +7,8 @@ import {
 
 const initialState={
     client:{},
-    loading:'',
-    error:''
+    loading: '',
+    error: ''
 }
 
 const clientReducer=(state = initialState, action)=>{
