@@ -29,7 +29,7 @@ const SignupFormSchema = yup.object().shape({
     state: yup.string()
         .trim()
         .required("State is required. Please select a state."),
-    user_type: yup.boolean()
+    user_type: yup.string()
         .required("Please select a user type")
         .oneOf(['Client', 'Trader'], "User type must be either 'Client' or 'Trader'"),
     email: yup.string()
@@ -42,9 +42,9 @@ const SignupFormSchema = yup.object().shape({
         .required("password is required. Please fill out field")
         .min(5, "A minimum of 5 characters is required for password"),
     zip_code: yup.string()
-    .trim()
-    .required("Please enter a zip code")
-    .min(5)
+        .trim()
+        .required("Please enter a zip code")
+        .min(5)
 })
 
 export default SignupFormSchema;
