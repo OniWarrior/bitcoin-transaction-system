@@ -1,8 +1,15 @@
 import { connect } from "react-redux"
-import { getPastOrders } from "../../State/Actions/ClientActions"
-
+import PastOrderCard from "./PastOrder"
+import SignedInNavigation from "../SignedInNavigation"
 
 const PastOrders = (props) => {
+
+    return (
+        <div className="past-orders-list">
+            <SignedInNavigation />
+
+        </div>
+    )
 
 }
 
@@ -13,6 +20,6 @@ const mapStateToProps = (state) => {
         error: state.clientReducer.error
     }
 }
-const mapDispatchToProps = getPastOrders
 
-export default connect(mapStateToProps, mapDispatchToProps)(PastOrders)
+
+export default connect(mapStateToProps)(PastOrders)
