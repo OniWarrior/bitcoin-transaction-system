@@ -1,4 +1,4 @@
-
+import { connect } from "react-redux";
 
 
 const BitcoinWallet = (props) => {
@@ -12,4 +12,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default BitcoinWallet;
+export default connect(mapStateToProps)(BitcoinWallet);
