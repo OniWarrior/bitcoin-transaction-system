@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import PastOrderCard from "./PastOrder"
 import SignedInNavigation from "../SignedInNavigation"
+import '../../Styles/PastOrdersList.css'
 
 const PastOrders = (props) => {
 
@@ -15,9 +16,9 @@ const PastOrders = (props) => {
             <div className="past-orders-list">
                 <h1>Past Orders</h1>
                 {
-                    props.client.map(order => {
+                    props.client.map(order => (
                         <PastOrderCard key={order.order_id} client={order} />
-                    })
+                    ))
                 }
             </div>
 
