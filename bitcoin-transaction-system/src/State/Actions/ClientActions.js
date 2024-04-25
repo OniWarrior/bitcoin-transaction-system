@@ -10,8 +10,7 @@ export const getBitcoinWallet = (navigate) => (dispatch) => {
     axiosWithAuth().get('/api/users/BitcoinWallet')
         .then(response => {
             dispatch({ type: CLIENT_SUCCESS, payload: response.data })
-            navigate('ClientDashboard/BitcoinWallet')
-
+            navigate('/ClientDashboard/BitcoinWallet')
         })
         .catch(err => {
             dispatch({ type: CLIENT_FAILURE, payload: err.message })
@@ -25,7 +24,7 @@ export const getPastOrders = (navigate) => (dispatch) => {
     axiosWithAuth().get('/api/users/Orders')
         .then(response => {
             dispatch({ type: CLIENT_SUCCESS, payload: response.data })
-            navigate('ClientDashboard/Orders')
+            navigate('/ClientDashboard/Orders')
         })
         .catch(err => {
             dispatch({ type: CLIENT_FAILURE, payload: err.message })
