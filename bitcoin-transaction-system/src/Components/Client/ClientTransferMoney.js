@@ -1,8 +1,15 @@
+import { connect } from "react-redux"
 
 
-
-const TransferMoney = () => {
+const TransferMoney = (props) => {
 
 }
 
-export default TransferMoney
+const mapStateToProps = (state) =>{
+    return{
+        client:state.clientReducer.client,
+        loading:state.clientReducer.loading,
+        error:state.clientReducer.error
+    }
+}
+export default connect (mapStateToProps)(TransferMoney)

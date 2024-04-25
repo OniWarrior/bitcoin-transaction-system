@@ -1,8 +1,16 @@
+import { connect } from "react-redux"
 
 
-
-const BuyBitcoin = () => {
+const BuyBitcoin = (props) => {
 
 }
 
-export default BuyBitcoin
+const mapStateToProps = (state) =>{
+    return{
+        client:state.clientReducer.client,
+        loading:state.clientReducer.loading,
+        error:state.clientReducer.error
+    }
+}
+
+export default connect(mapStateToProps)(BuyBitcoin)
