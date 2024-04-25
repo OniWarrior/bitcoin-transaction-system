@@ -1,7 +1,7 @@
 
 
 
-const BitcoinWallet = () => {
+const BitcoinWallet = (props) => {
 
 }
 
