@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 
 
-const BuyBitcoin = () => {
+const BuyBitcoin = (props) => {
 
 }
 

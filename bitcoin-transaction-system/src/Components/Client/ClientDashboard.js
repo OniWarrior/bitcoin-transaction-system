@@ -1,7 +1,7 @@
 import { connect } from "react-redux"
 
 
-const ClientDashboard = () => {
+const ClientDashboard = (props) => {
 
 }
 
