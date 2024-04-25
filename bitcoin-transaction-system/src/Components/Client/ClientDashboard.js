@@ -13,6 +13,8 @@ const ClientDashboard = (props) => {
 
     const goToWallet = (e) => {
         e.preventDefault()
+        // This is the api call to retrieve the bitcoin
+        // wallet of the client.
         props.getBitcoinWallet(navigate)
     }
 
