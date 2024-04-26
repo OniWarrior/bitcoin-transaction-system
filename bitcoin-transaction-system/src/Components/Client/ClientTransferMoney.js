@@ -3,10 +3,18 @@ import { postMoneyTransfer } from "../../State/Actions/ClientActions"
 import ClientTransferMoneyFormSchema from '../../FormSchemas/ClientTransferMoneyFormSchema'
 import { useTransferValidation } from '../../Hooks/useTransferValidation.js'
 import SignedInValidation from '../SignedInNavigation.js'
-
+import { useState } from "react"
 
 
 const TransferMoney = (props) => {
+    const [transfer, errors, setTransfer] = useTransferValidation(ClientTransferMoneyFormSchema)
+    const initialDisabled = true
+    const [disabled, setDisabled] = useState(true)
+
+    const change = (event) => {
+        event.preventDefault()
+        setTransfer(event, ClientTransferMoneyFormSchema)
+    }
 
     return (
         <div className="transfer-container">
