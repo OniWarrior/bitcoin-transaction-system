@@ -16,6 +16,20 @@ const TransferMoney = (props) => {
         setTransfer(event, ClientTransferMoneyFormSchema)
     }
 
+    const handleDisabled = (event) => {
+        event.preventDefault()
+        if (transfer.transfer_amount > 0) {
+            setDisabled(() => ({
+                disabled: !disabled
+            }))
+        }
+        else {
+            setDisabled(() => ({
+                disabled: disabled
+            }))
+        }
+    }
+
     return (
         <div className="transfer-container">
             <SignedInValidation />
