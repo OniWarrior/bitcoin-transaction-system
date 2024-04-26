@@ -19,6 +19,7 @@ export const fetchLatestCryptocurrency = () => (dispatch) => {
     axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', config)
         .then(response => {
             dispatch({ type: BITCOIN_SUCCESS, payload: response.data });
+
         })
         .catch(error => {
             dispatch({ type: BITCOIN_FAILURE, payload: error.message });

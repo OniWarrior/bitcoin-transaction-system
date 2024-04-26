@@ -22,7 +22,8 @@ const SignedInNavigation = () => {
     }
 
     const navigateTo = (path) => (e) => {
-        e.preventDefault();
+        e.preventDefault()
+
         navigate(path);
     };
 

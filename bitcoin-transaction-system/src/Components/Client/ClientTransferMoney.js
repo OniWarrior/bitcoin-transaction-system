@@ -6,6 +6,7 @@ import SignedInValidation from '../SignedInNavigation.js'
 import { useState } from "react"
 import { useNavigate } from "react-router"
 import { Form } from "react-bootstrap"
+import '../../Styles/ClientTransfer.css'
 
 
 const TransferMoney = (props) => {
@@ -44,22 +45,26 @@ const TransferMoney = (props) => {
             <SignedInValidation />
             <div className="transfer-box">
                 <div className="transfer-container">
-                    <Form className="form-container" onSubmit={onFormSubmit}>
-                        <h1>Transfer Mone</h1>
-                        <div className="input-group">
+                    <Form className="form-transfer-container" onSubmit={onFormSubmit}>
+                        <div className="transfer-header">
+                            <h1>Transfer Money</h1>
+
+                        </div>
+
+                        <div className="input-transfer-group">
                             <label className="label-transfer">
                                 Transfer Amount:
                                 <input className="transfer-money-box"
-                                    id="transfer_amount"
-                                    type="text"
-                                    name="transfer_amount"
+                                    id="amount_paid"
+                                    type="number"
+                                    name="amount_paid"
                                     placeholder="Transfer Amount"
                                     required
                                     onChange={change}
                                 />
                             </label>
                             <div className="errors">
-                                <p>{errors.transfer_amount}</p>
+                                <p>{errors.amount_paid}</p>
                             </div>
                             <button className="transfer-submit"
                                 type="submit"
@@ -84,6 +89,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = postMoneyTransfer
+const mapDispatchToProps = { postMoneyTransfer }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TransferMoney)

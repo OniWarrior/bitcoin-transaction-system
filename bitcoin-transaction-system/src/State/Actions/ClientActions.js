@@ -60,11 +60,13 @@ export const postSellBitcoin = (order, navigate) => (dispatch) => {
 
 // api call to post a transfer money payment to trader
 export const postMoneyTransfer = (transfer, navigate) => (dispatch) => {
+
     dispatch({ type: CLIENT_START })
     axiosWithAuth().post('/api/users/TransferMoney', transfer)
         .then(response => {
             dispatch({ type: CLIENT_SUCCESS, payload: response.data })
             navigate('/ClientDashboard')
+            alert(response.data)
         })
         .catch(err => {
             dispatch({ type: CLIENT_FAILURE, payload: err.message })
