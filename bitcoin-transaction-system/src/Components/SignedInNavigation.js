@@ -38,8 +38,8 @@ const SignedInNavigation = () => {
         ],
         Trader: [
             { path: '/TraderDashboard', label: 'dash' },
-            { path: '/TraderDashboard/TraderClientSearch', label: 'Search' },
-            { path: '/TraderDashboard/Cancel-Log', label: 'Cancel Log' },
+            { path: '/TraderDashboard/TraderClientSearch', label: 'search' },
+            { path: '/TraderDashboard/Cancel-Log', label: 'cancel-log' },
         ],
         Manager: [
             { path: '/ManagerDashboard', label: 'dash' },
