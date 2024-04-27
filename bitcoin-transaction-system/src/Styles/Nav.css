@@ -77,6 +77,11 @@
     animation:nav-button-animation linear 0.5s infinite;
 
 }
+.button-log-out:hover{
+    opacity: 0.5;
+    animation:nav-button-animation linear 0.5s infinite;
+
+}
 
 .button-sell{
     background-image: url('../Assets/sellbitcoin.png');
@@ -195,10 +200,18 @@
     background-size: auto;
     background-attachment: scroll;
 
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    margin-top:3.3em;
+    height:8em;
+    width:8em;
+    border-radius: 50%;
     border:none;
+    margin-bottom: 5em;
+}
+
+.button-search:hover{
+    opacity: 0.5;
+    animation:nav-button-animation linear 0.5s infinite;
+
 }
 
 
@@ -211,10 +224,18 @@
     background-size: auto;
     background-attachment: scroll;
 
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    margin-top:3.3em;
+    height:8em;
+    width:8em;
+    border-radius: 50%;
     border:none;
+    margin-bottom: 5em;
+}
+
+.button-cancel-log:hover{
+    opacity: 0.5;
+    animation:nav-button-animation linear 0.5s infinite;
+
 }
 
 
