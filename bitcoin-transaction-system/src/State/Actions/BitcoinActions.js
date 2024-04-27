@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { jwtDecode } from 'jwt-decode'
 export const BITCOIN_START = 'BITCOIN_START'
 export const BITCOIN_SUCCESS = 'BITCOIN_SUCCESS'
 export const BITCOIN_FAILURE = 'BITCOIN_FAILURE'

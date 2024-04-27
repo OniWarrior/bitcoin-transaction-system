@@ -1,7 +1,11 @@
 import { connect } from "react-redux"
+import { useNavigate } from "react-router"
 import { postBuyBitcoin } from "../../State/Actions/ClientActions"
 
+
 const BuyBitcoin = (props) => {
+    const navigate = useNavigate()
+    const [order, errors, SetOrder] =
 
 }
 
