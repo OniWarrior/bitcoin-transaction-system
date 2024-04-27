@@ -4,13 +4,15 @@ import loginReducer from "./LoginReducer";
 import managerReducer from "./ManagerReducer";
 import clientReducer from "./ClientReducer";
 import { bitcoinReducer } from "./BitcoinReducer";
+import { traderReducer } from "./TraderReducer";
 
 const rootReducer = combineReducers({
     signupReducer,
     loginReducer,
     managerReducer,
     clientReducer,
-    bitcoinReducer
+    bitcoinReducer,
+    traderReducer
 })
 
 export default rootReducer
