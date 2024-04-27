@@ -23,6 +23,15 @@ const TraderDashboard = () => {
     return (
         <div>
             <SignedInNavigation />
+            <div className="trader-box">
+                <div className="trader-container">
+                    <div className="trader-card">
+                        <div className="trader-card-group">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 
