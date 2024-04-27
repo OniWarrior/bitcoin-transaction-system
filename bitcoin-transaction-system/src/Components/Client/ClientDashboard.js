@@ -5,7 +5,7 @@ import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/ClientDashboard.css'
 import { getPastOrders } from "../../State/Actions/ClientActions";
 import { useNavigate } from "react-router";
-import { fetchLatestCryptocurrency } from "../../State/Actions/BitcoinActions";
+import { fetchLatestCryptocurrencyForClient } from "../../State/Actions/BitcoinActions";
 
 const ClientDashboard = (props) => {
     // local state vars
@@ -26,16 +26,15 @@ const ClientDashboard = (props) => {
     const goToBuyBitcoin = (e) => {
         e.preventDefault()
         // fetch current bitcoin price
-        props.fetchLatestCryptocurrency(navigate)
+        props.fetchLatestCryptocurrencyForClient(navigate)
     }
 
     const goToSellBitcoin = (e) => {
         e.preventDefault()
         // fetch current bitcoin price
-        props.fetchLatestCryptocurrency()
+        props.fetchLatestCryptocurrencyForClient(navigate)
 
-        // redirect to sell bitcoin
-        navigate('/ClientDashboard/SellBitcoin')
+
 
     }
 
@@ -123,5 +122,5 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = { getBitcoinWallet, getPastOrders, fetchLatestCryptocurrency }
+const mapDispatchToProps = { getBitcoinWallet, getPastOrders, fetchLatestCryptocurrencyForClient }
 export default connect(mapStateToProps, mapDispatchToProps)(ClientDashboard)
