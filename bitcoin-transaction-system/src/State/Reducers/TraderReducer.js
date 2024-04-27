@@ -4,3 +4,10 @@ import {
     TRADER_FAILURE
 } from '../Actions/TraderActions.js'
 
+const initialState = {
+    trader: {},
+    loading: '',
+    error: ''
+}
+
+
