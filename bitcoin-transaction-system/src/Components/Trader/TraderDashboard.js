@@ -20,6 +20,12 @@ const TraderDashboard = () => {
         navigate('/TraderClientSearch')
     }
 
+    return (
+        <div>
+            <SignedInNavigation />
+        </div>
+    )
+
 
 
 
