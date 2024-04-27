@@ -26,13 +26,7 @@ const ClientDashboard = (props) => {
     const goToBuyBitcoin = (e) => {
         e.preventDefault()
         // fetch current bitcoin price
-        props.fetchLatestCryptocurrency()
-
-        // redirect to buy bitcoin
-        navigate('/ClientDashboard/BuyBitcoin')
-
-
-
+        props.fetchLatestCryptocurrency(navigate)
     }
 
     const goToSellBitcoin = (e) => {
