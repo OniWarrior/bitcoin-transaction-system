@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import SignedInNavigation from "../SignedInNavigation"
 import CancelCard from '../Trader/CancelCard'
+import '../../Styles/CancelLog.css'
 
 const CancelLog = (props) => {
 
