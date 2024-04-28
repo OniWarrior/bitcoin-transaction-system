@@ -16,19 +16,39 @@ const ClientDashboard = (props) => {
             <div className="client-box">
                 <div className="client-container">
                     <div className="client-card">
+                        <div className="client-card-group">
+                            <h2>Get Bitcoin Wallet</h2>
+                            
+                            <hr/>
+                        </div>
+                    </div>
+                    <div className="client-card">
+                        <div className="client-card-group">
+                            <h2>Get Past Orders</h2>
 
+                            <hr/>
+                        </div>
                     </div>
                     <div className="client-card">
-                        
+                        <div className="client-card-group">
+                            <h2>Buy Bitcoin</h2>
+
+                            <hr/>
+                        </div>
                     </div>
                     <div className="client-card">
-                        
+                        <div className="client-card-group">
+                            <h2>Sell Bitcoin</h2>
+
+                            <hr/>
+                        </div>
                     </div>
                     <div className="client-card">
-                        
-                    </div>
-                    <div className="client-card">
-                        
+                        <div className="client-card-group">
+                            <h2>Transfer Money TO Trader</h2>
+
+                            <hr/>
+                        </div>
                     </div>
                 </div>
             </div>
