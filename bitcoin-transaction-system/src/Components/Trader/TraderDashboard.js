@@ -17,7 +17,7 @@ const TraderDashboard = (props) => {
 
     const goToClientSearch = (e) => {
         e.preventDefault()
-        navigate('/TraderClientSearch')
+        navigate('/TraderDashboard/TraderClientSearch')
     }
 
     return (

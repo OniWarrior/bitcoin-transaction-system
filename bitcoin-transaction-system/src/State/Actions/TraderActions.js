@@ -27,10 +27,10 @@ export const getCancelLog = (navigate) => (dispatch) => {
 // api call to retrieve a searched client
 export const getClient = (client, navigate) => (dispatch) => {
     dispatch({ type: TRADER_START })
-    axiosWithAuth().get('/api/users/clients/search', client)
+    axiosWithAuth().post('/api/users/clients/search', client)
         .then(response => {
             dispatch({ type: TRADER_SUCCESS, payload: response.data })
-            navigate('TraderDashboard/clients/search')
+            navigate('/TraderDashboard/TraderClientSearch/clients/search')
         })
         .catch(err => {
             dispatch({ type: TRADER_FAILURE, payload: err.message })

@@ -46,11 +46,12 @@ const TraderClientSearch = (props) => {
             <SignedInNavigation />
             <div className="client-search-container">
                 <Form className="form-client-find-container" onSubmit={onFormSubmit}>
-                    <div className="client-find-header">
-                        <h1>Find Client</h1>
-                    </div>
+
 
                     <div className="client-find-inputs">
+
+                        <h1>Find Client</h1>
+
                         <label className="label-find-first-name">
                             First Name:
                             <input className="find-first-name-box"
@@ -79,7 +80,7 @@ const TraderClientSearch = (props) => {
                         </div>
                         <label className="label-find-email">
                             Email:
-                            <input className="find-emal-box"
+                            <input className="find-email-box"
                                 id="email"
                                 type="text"
                                 name="email"
