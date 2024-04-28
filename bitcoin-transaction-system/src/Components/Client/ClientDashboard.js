@@ -15,7 +15,21 @@ const ClientDashboard = (props) => {
             <SignedInNavigation />
             <div className="client-box">
                 <div className="client-container">
-                    
+                    <div className="client-card">
+
+                    </div>
+                    <div className="client-card">
+                        
+                    </div>
+                    <div className="client-card">
+                        
+                    </div>
+                    <div className="client-card">
+                        
+                    </div>
+                    <div className="client-card">
+                        
+                    </div>
                 </div>
             </div>
         </div>
