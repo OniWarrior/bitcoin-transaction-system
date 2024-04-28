@@ -3,12 +3,16 @@ import * as yup from 'yup'
 
 const initialValues = {
     Bitcoin_balance: '',
-    comm_type: ''
+    comm_type: '',
+    email: '',
+    password: ''
 }
 
 const initialErrors = {
     Bitcoin_balance: '',
-    comm_type: ''
+    comm_type: '',
+    email: '',
+    password: ''
 }
 
 

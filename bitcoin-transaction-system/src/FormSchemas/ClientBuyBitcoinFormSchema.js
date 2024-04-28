@@ -10,6 +10,16 @@ const ClientBuyBitcoinFormSchema = yup.object().shape({
     comm_type: yup.string()
         .required("Please select a commission type")
         .oneOf(['Bitcoin', 'USD'], "Commission type must be either 'Bitcoin' or 'USD'"),
+    email: yup.string()
+        .trim()
+        .required()
+        .required("Email/Password is required. Please fill out field")
+        .email()
+    ,
+    password: yup.string()
+        .trim()
+        .required("Email/Password is required.Please fill out field")
+
 
 
 })

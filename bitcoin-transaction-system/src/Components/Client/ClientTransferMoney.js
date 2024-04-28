@@ -2,11 +2,12 @@ import { connect } from "react-redux"
 import { postMoneyTransfer } from "../../State/Actions/ClientActions"
 import ClientTransferMoneyFormSchema from '../../FormSchemas/ClientTransferMoneyFormSchema'
 import { useTransferValidation } from '../../Hooks/useTransferValidation.js'
-import SignedInValidation from '../SignedInNavigation.js'
+import SignedInNavigation from '../SignedInNavigation.js'
 import { useState } from "react"
 import { useNavigate } from "react-router"
 import { Form } from "react-bootstrap"
 import '../../Styles/ClientTransfer.css'
+
 
 
 const TransferMoney = (props) => {
@@ -42,7 +43,7 @@ const TransferMoney = (props) => {
 
     return (
         <div >
-            <SignedInValidation />
+            <SignedInNavigation />
             <div className="transfer-box">
                 <div className="transfer-container">
                     <Form className="form-transfer-container" onSubmit={onFormSubmit}>

@@ -5,7 +5,7 @@ import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/ClientDashboard.css'
 import { getPastOrders } from "../../State/Actions/ClientActions";
 import { useNavigate } from "react-router";
-import { fetchLatestCryptocurrencyForClient } from "../../State/Actions/BitcoinActions";
+import { fetchLatestCryptocurrencyForClient } from "../../State/Actions/BitcoinActions.js";
 
 const ClientDashboard = (props) => {
     // local state vars
