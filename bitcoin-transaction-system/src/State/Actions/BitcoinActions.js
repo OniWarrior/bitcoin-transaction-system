@@ -6,12 +6,24 @@ export const BITCOIN_FAILURE = 'BITCOIN_FAILURE'
 
 
 // third party api call to fetch bitcoin and other cryptocurrency info for Client
-export const fetchLatestCryptocurrencyForClient = (navigate) => (dispatch) => {
+export const fetchLatestCryptocurrencyForClientBuy = (navigate) => (dispatch) => {
     dispatch({ type: BITCOIN_START });
     axiosWithAuth().get('/api/users/latest',)
         .then(response => {
             dispatch({ type: BITCOIN_SUCCESS, payload: response.data });
             navigate('/ClientDashboard/BuyBitcoin')
+        })
+        .catch(error => {
+            dispatch({ type: BITCOIN_FAILURE, payload: error.message });
+        });
+}
+
+export const fetchLatestCryptocurrencyForClientSell = (navigate) => (dispatch) => {
+    dispatch({ type: BITCOIN_START });
+    axiosWithAuth().get('/api/users/latest',)
+        .then(response => {
+            dispatch({ type: BITCOIN_SUCCESS, payload: response.data });
+            navigate('/ClientDashboard/SellBitcoin')
         })
         .catch(error => {
             dispatch({ type: BITCOIN_FAILURE, payload: error.message });

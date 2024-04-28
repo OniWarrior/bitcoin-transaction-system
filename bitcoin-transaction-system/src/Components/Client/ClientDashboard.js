@@ -5,7 +5,9 @@ import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/ClientDashboard.css'
 import { getPastOrders } from "../../State/Actions/ClientActions";
 import { useNavigate } from "react-router";
-import { fetchLatestCryptocurrencyForClient } from "../../State/Actions/BitcoinActions.js";
+import { fetchLatestCryptocurrencyForClientBuy } from "../../State/Actions/BitcoinActions.js";
+import { fetchLatestCryptocurrencyForClientSell } from "../../State/Actions/BitcoinActions.js";
+
 
 const ClientDashboard = (props) => {
     // local state vars
@@ -26,13 +28,13 @@ const ClientDashboard = (props) => {
     const goToBuyBitcoin = (e) => {
         e.preventDefault()
         // fetch current bitcoin price
-        props.fetchLatestCryptocurrencyForClient(navigate)
+        props.fetchLatestCryptocurrencyForClientBuy(navigate)
     }
 
     const goToSellBitcoin = (e) => {
         e.preventDefault()
         // fetch current bitcoin price
-        props.fetchLatestCryptocurrencyForClient(navigate)
+        props.fetchLatestCryptocurrencyForClientSell(navigate)
 
 
 
@@ -122,5 +124,5 @@ const mapStateToProps = (state) => {
 }
 
 
-const mapDispatchToProps = { getBitcoinWallet, getPastOrders, fetchLatestCryptocurrencyForClient }
+const mapDispatchToProps = { getBitcoinWallet, getPastOrders, fetchLatestCryptocurrencyForClientBuy, fetchLatestCryptocurrencyForClientSell }
 export default connect(mapStateToProps, mapDispatchToProps)(ClientDashboard)
