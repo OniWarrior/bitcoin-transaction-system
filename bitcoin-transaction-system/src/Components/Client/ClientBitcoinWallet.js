@@ -11,7 +11,7 @@ const BitcoinWallet = (props) => {
                 <div className="wallet-card">
                     <h1>Current Bitcoin Balance</h1>
                     <hr />
-                    <p>{props.client.Bitcoin_balance}</p>
+                    <p>{props.client}</p>
                 </div>
             </div>
 
