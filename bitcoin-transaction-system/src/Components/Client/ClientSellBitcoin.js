@@ -61,7 +61,7 @@ const SellBitcoin = (props) => {
                             <label className="label-bitcoin-price">
                                 Current Price Of Bitcoin:
 
-                                <h3>{props.bitcoin.price}</h3>
+                                <h3>${props.bitcoin.price}</h3>
                             </label>
                             <hr />
 
@@ -144,7 +144,7 @@ const SellBitcoin = (props) => {
                         <button className="sell-bitcoin-submit"
                             type="submit"
                             disabled={handleDisabled}
-                        >Buy</button>
+                        >Sell</button>
                     </div>
 
                 </Form>

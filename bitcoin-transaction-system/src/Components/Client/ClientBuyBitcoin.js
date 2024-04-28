@@ -61,7 +61,7 @@ const BuyBitcoin = (props) => {
                             <label className="label-bitcoin-price">
                                 Current Price Of Bitcoin:
 
-                                <h3>{props.bitcoin.price}</h3>
+                                <h3>${props.bitcoin.price}</h3>
                             </label>
                             <hr />
 
