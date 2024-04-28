@@ -1,8 +1,13 @@
 import { connect } from "react-redux";
-
+import SignedInNavigation from "../SignedInNavigation";
 
 const BitcoinWallet = (props) => {
-
+    return (
+        <div className="bitcoin-wallet-container">
+            <SignedInNavigation />
+            
+        </div>
+    )
 }
 const mapStateToProps = (state) => {
     return {
