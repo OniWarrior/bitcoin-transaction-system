@@ -7,6 +7,7 @@ import { getClient } from "../../State/Actions/TraderActions";
 import { useFindValidation } from '../../Hooks/useFindValidation'
 import TraderFindFormSchema from '../../FormSchemas/TraderFindFormSchema'
 import { useState } from "react";
+import { Form } from "react-bootstrap";
 
 const TraderClientSearch = (props) => {
     const navigate = useNavigate()
@@ -43,6 +44,62 @@ const TraderClientSearch = (props) => {
     return (
         <div>
             <SignedInNavigation />
+            <div className="client-search-container">
+                <Form className="form-client-find-container" onSubmit={onFormSubmit}>
+                    <div className="client-find-header">
+                        <h1>Find Client</h1>
+                    </div>
+
+                    <div className="client-find-inputs">
+                        <label className="label-find-first-name">
+                            First Name:
+                            <input className="find-first-name-box"
+                                id="first_name"
+                                type="text"
+                                name="first_name"
+                                placeholder="First Name"
+                                onChange={change}
+                            />
+                        </label>
+                        <div className="errors">
+                            <p>{errors.first_name}</p>
+                        </div>
+                        <label className="label-find-last-name">
+                            Last Name:
+                            <input className="find-last-name-box"
+                                id="last_name"
+                                type="text"
+                                name="last_name"
+                                placeholder="Last Name"
+                                onChange={change}
+                            />
+                        </label>
+                        <div className="errors">
+                            <p>{errors.last_name}</p>
+                        </div>
+                        <label className="label-find-email">
+                            Email:
+                            <input className="find-emal-box"
+                                id="email"
+                                type="text"
+                                name="email"
+                                placeholder="Email"
+                                onChange={change}
+                            />
+                        </label>
+                        <div className="errors">
+                            <p>{errors.email}</p>
+                        </div>
+
+                        <button className="find-client-submit"
+                            type="submit"
+                            disabled={handleDisabled}
+                        >Find Client</button>
+                    </div>
+
+
+                </Form>
+            </div>
         </div>
     )
 
