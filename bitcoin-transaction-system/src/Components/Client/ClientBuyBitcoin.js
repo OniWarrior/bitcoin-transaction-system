@@ -21,7 +21,7 @@ const BuyBitcoin = (props) => {
 
     const handleDisabled = (event) => {
         event.preventDefault()
-        if (order.Bitcoin_balance > 0) {
+        if (order.Bitcoin_balance > 0 && order.comm_type) {
             setDisabled(() => ({
                 disabled: !disabled
             }))
@@ -35,7 +35,13 @@ const BuyBitcoin = (props) => {
 
     const onFormSubmit = (event) => {
         event.preventDefault()
-        props.postBuyBitcoin(order, navigate)
+
+        const updatedOrder = {
+            ...order,
+            Bitcoin_price: props.bitcoin.price
+        };
+
+        props.postBuyBitcoin(updatedOrder, navigate)
 
     }
 
@@ -43,18 +49,22 @@ const BuyBitcoin = (props) => {
         <div >
             <SignedInNavigation />
             <div className="buy-bitcoin-box">
-                <div className="buy-bitcoin-container">
-                    <Form className="form-buy-bitcoin-container" onSubmit={onFormSubmit}>
-                        <div className="buy-bitcoin-header">
-                            <h1>Buy Bitcoin</h1>
 
-                        </div>
+                <Form className="form-buy-bitcoin-container" onSubmit={onFormSubmit}>
+                    <div className="buy-bitcoin-header">
+                        <h1>Buy Bitcoin</h1>
 
-                        <div className="input-buy-bitcoin-group">
+                    </div>
+
+                    <div className="input-buy-bitcoin-group">
+                        <div className="buy-input">
                             <label className="label-bitcoin-price">
                                 Current Price Of Bitcoin:
-                                <h3>{props.bitcoin}</h3>
+
+                                <h3>{props.bitcoin.price}</h3>
                             </label>
+                            <hr />
+
                             <label className="label-buy-bitcoin">
                                 Bitcoin Amount:
                                 <input className="buy-bitcoin-amount-box"
@@ -70,76 +80,78 @@ const BuyBitcoin = (props) => {
                             <div className="errors">
                                 <p>{errors.Bitcoin_balance}</p>
                             </div>
-                            <div className="comm-type-header">
-                                <h2>Commission Type</h2>
+                            <div className="inner-group">
+                                <div className="comm-type-header">
+                                    <h2>Commission Type</h2>
+                                </div>
+                                <label className='label-buy-bitcoin-input-group' htmlFor="comm_type" >
+                                    USD:
+                                    <input className='form-check-input'
+                                        id='USD'
+                                        type='radio'
+                                        name='comm_type'
+                                        value='USD'
+                                        onChange={change}
+                                    />
+                                </label>
+
+                                <label className='label-input-group' htmlFor="comm_type" >
+                                    Bitcoin:
+                                    <input className='form-check-input'
+                                        id='Bitcoin'
+                                        type='radio'
+                                        name='comm_type'
+                                        value='Bitcoin'
+                                        onChange={change}
+                                    />
+                                </label>
+
+                                <div className='errors'>
+                                    <p>{errors.comm_type}</p>
+                                </div>
+
+                                <label className='label-buy-bitcoin-login'>
+                                    Email:
+                                    <input className='email-box'
+                                        id='email'
+                                        type='text'
+                                        name='email'
+                                        placeholder='email'
+                                        required
+                                        onChange={change}
+                                    />
+                                </label>
+                                <div className='errors'>
+                                    <p>{errors.email}</p>
+                                </div>
+
+                                <label className='label-buy-bitcoin-login'>
+                                    Password:
+                                    <input
+                                        id='password'
+                                        type='password'
+                                        name='password'
+                                        placeholder='password'
+                                        required
+                                        onChange={change}
+                                    />
+                                </label>
+                                <div className='errors'>
+                                    <p>{errors.password}</p>
+                                </div>
                             </div>
-                            <label className='label-buy-bitcoin-input-group' >
-                                USD:
-                                <input className='form-check-input'
-                                    id='USD'
-                                    type='radio'
-                                    name='comm_type'
-                                    value='USD'
-                                    onChange={change}
-                                />
-                            </label>
-
-                            <label className='label-input-group' >
-                                Bitcoin:
-                                <input className='form-check-input'
-                                    id='Bitcoin'
-                                    type='radio'
-                                    name='user_type'
-                                    value='Bitcoin'
-                                    onChange={change}
-                                />
-                            </label>
-
-                            <div className='errors'>
-                                <p>{errors.user_type}</p>
-                            </div>
-
-                            <label className='label-buy-bitcoin-login'>
-                                Email:
-                                <input className='email-box'
-                                    id='email'
-                                    type='text'
-                                    name='email'
-                                    placeholder='email'
-                                    required
-                                    onChange={change}
-                                />
-                            </label>
-                            <div className='errors'>
-                                <p>{errors.email}</p>
-                            </div>
-
-                            <label className='label-buy-bitcoin-login'>
-                                Password:
-                                <input
-                                    id='password'
-                                    type='password'
-                                    name='password'
-                                    placeholder='password'
-                                    required
-                                    onChange={change}
-                                />
-                            </label>
-                            <div className='errors'>
-                                <p>{errors.password}</p>
-                            </div>
-
-                            <button className="buy-bitcoin-submit"
-                                type="submit"
-                                disabled={handleDisabled}
-                            >Transfer</button>
                         </div>
+                        <button className="buy-bitcoin-submit"
+                            type="submit"
+                            disabled={handleDisabled}
+                        >Buy</button>
+                    </div>
 
-                    </Form>
-                </div>
+                </Form>
             </div>
-
         </div>
+
+
 
     )
 
@@ -147,19 +159,15 @@ const BuyBitcoin = (props) => {
 
 const mapStateToProps = (state) => {
     return {
+        bitcoin: state.bitcoinReducer.bitcoin,
         client: state.clientReducer.client,
-        loading: state.clientReducer.loading,
-        error: state.clientReducer.error
+        login: state.loginReducer.login,
+        error: state.clientReducer.error,
+        login_error: state.loginReducer.error
     }
 }
 
-const mapBitcoinToProps = (state) => {
-    return {
-        bitcoin: state.bitcoinReducer.bitcoin,
-        loading: state.bitcoinReducer.loading,
-        error: state.bitcoinReducer.error
-    }
-}
+
 const mapDispatchToProps = { postBuyBitcoin }
 
-export default connect(mapStateToProps, mapBitcoinToProps, mapDispatchToProps)(BuyBitcoin)
+export default connect(mapStateToProps, mapDispatchToProps)(BuyBitcoin)

@@ -33,12 +33,17 @@ export const getPastOrders = (navigate) => (dispatch) => {
 
 // api call to post a buy bitcoin order
 export const postBuyBitcoin = (order, navigate) => (dispatch) => {
+
     dispatch({ type: CLIENT_START })
     axiosWithAuth().post('/api/users/BuyBitcoin', order)
         .then(response => {
             dispatch({ type: CLIENT_SUCCESS, payload: response.data })
             navigate('/ClientDashboard')
-            alert(response.data)
+
+            // Extracting the data from response
+            const { message, amount } = response.data;
+            alert(`message: ${message}\namount: ${amount}`);
+
         })
         .catch(err => {
             dispatch({ type: CLIENT_FAILURE, payload: err.message })

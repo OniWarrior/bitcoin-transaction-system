@@ -18,7 +18,7 @@ const initialErrors = {
 }
 
 
-export const useBuyBitcoinValidation = (schema) => {
+export const useSellBitcoinValidation = (schema) => {
     const [data, setData] = useState(initialValues)
     const [errors, setErrors] = useState(initialErrors)
 

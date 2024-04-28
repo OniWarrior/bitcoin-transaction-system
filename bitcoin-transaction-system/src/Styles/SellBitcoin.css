@@ -1,7 +1,4 @@
-
-
-
-.form-buy-bitcoin-container{
+.form-sell-bitcoin-container{
     background-repeat:no-repeat;
     background-image: url("../Assets/bitcoin_trading_small.png");
     box-shadow:2px 2px 2px 2px rgba(128,128,128,0.8);
@@ -30,7 +27,7 @@
 
 
 
-.buy-bitcoin-header{
+.sell-bitcoin-header{
     margin:auto;
     border-radius: 20px;
     width:70%;
@@ -51,7 +48,7 @@
 .email-box{
     margin-left:2em;
 }
-.form-buy-bitcoin-container h2{
+.form-sell-bitcoin-container h2{
     padding-top:5%;
     text-align:center;
     color:white;
@@ -64,7 +61,7 @@
     justify-content: space-evenly;
     height: 10em;
 }
-.input-buy-bitcoin-group{
+.input-sell-bitcoin-group{
    display: flex;
    flex-direction: column;
     margin:auto;
@@ -80,11 +77,11 @@
 }
 
 
-.label-buy-bitcoin-login{
+.label-sell-bitcoin-login{
     color:white;
 }
 
-.buy-bitcoin-submit{
+.sell-bitcoin-submit{
     color:white;
     width:12em;
     height:2em;
@@ -94,7 +91,7 @@
     margin:auto;
 }
 
-.form-buy-bitcoin-container button:hover{
+.form-sell-bitcoin-container button:hover{
     animation: button-animation ease-in 0.3s;
     transform: scale(1.9);
 }
