@@ -20,6 +20,21 @@ const ClientDashboard = (props) => {
         props.getPastOrders(navigate)
     }
 
+    const goToBuyBitcoin=(e)=>{
+        e.preventDefault()
+        navigate('/ClientDashboard/BuyBitcoin')
+    }
+
+    const goToSellBitcoin=(e)=>{
+        e.preventDefault()
+        navigate('/ClientDashboard/SellBitcoin')
+    }
+
+    const goToMoneyTransfer=(e)=>{
+        e.preventDefault()
+        navigate('/ClientDashboard/TransferMoney')
+    }
+
     return (
         <div className="client-dash">
             <SignedInNavigation />
@@ -44,22 +59,25 @@ const ClientDashboard = (props) => {
                     <div className="client-card">
                         <div className="client-card-group">
                             <h2>Buy Bitcoin</h2>
-
                             <hr/>
+
+                            <button className="card-button" onClick={goToBuyBitcoin}>Buy Bitcoin</button>
                         </div>
                     </div>
                     <div className="client-card">
                         <div className="client-card-group">
                             <h2>Sell Bitcoin</h2>
-
                             <hr/>
+
+                            <button className="card-button" onClick={goToSellBitcoin}>Sell Bitcoin</button>
                         </div>
                     </div>
                     <div className="client-card">
                         <div className="client-card-group">
-                            <h2>Transfer Money TO Trader</h2>
-
+                            <h2>Transfer Money To Trader</h2>
                             <hr/>
+
+                            <button className="card-button" onClick={goToMoneyTransfer}>Money Transfer</button>
                         </div>
                     </div>
                 </div>
