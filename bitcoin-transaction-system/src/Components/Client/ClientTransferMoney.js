@@ -5,11 +5,13 @@ import { useTransferValidation } from '../../Hooks/useTransferValidation.js'
 import SignedInValidation from '../SignedInNavigation.js'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Form } from "react-router-dom"
+import '../../Styles/ClientTranfser.css'
 
 
 const TransferMoney = (props) => {
     const navigate = useNavigate()
-    const[transfer,errors,setTransfer] = useTransferValidation(ClientTransferMoneyFormSchema)
+    const [transfer,errors,setTransfer] = useTransferValidation(ClientTransferMoneyFormSchema)
     const initialDisabled = true
     const [disabled, setDisabled] = useState(initialDisabled)
 
@@ -38,26 +40,30 @@ const TransferMoney = (props) => {
     }
 
     return(
-        <div className = "transfer-container">
+        <div >
             <SignedInValidation />
             <div className="transfer-box">
                 <div className="transfer-container">
-                    <Form className = "form-container" onSubmit = {onFormSubmit}>
-                        <h1> Transfer Money</h1>
-                        <div className="input-group">
+                    <Form className = "form-transfer-container" onSubmit = {onFormSubmit}>
+                        <div className="transfer-header">
+                        <h1>Transfer Money</h1>
+
+                        </div>
+
+                        <div className="input-transfer-group">
                             <label className="label-transfer">
                                 Transfer Amount:
                                 <input className="transfer-money-box"
-                                    id = "transfer_amount"
-                                    type = "text"
-                                    name = "transfer_amount"
+                                    id = "amount_paid"
+                                    type = "number"
+                                    name = "number_paid"
                                     placeholder="Transfer Amount"
                                     required
                                     onChange={change}
                                     />
                             </label>
                             <div className="errors">
-                                <p>{errors.transfer_amount}</p>
+                                <p>{errors.amount_paid}</p>
                             </div>
                             <button className="transfer-submit"
                                     type="submit"
@@ -75,12 +81,12 @@ const TransferMoney = (props) => {
 
 const mapStateToProps = (state) =>{
     return{
-        client:state.clientReducer.client,
-        loading:state.clientReducer.loading,
-        error:state.clientReducer.error
+        client: state.clientReducer.client,
+        loading: state.clientReducer.loading,
+        error: state.clientReducer.error
     }
 }
 
-const mapDispatchToProps = postMoneyTransfer
+const mapDispatchToProps = { postMoneyTransfer }
 
 export default connect (mapStateToProps, mapDispatchToProps)(TransferMoney)
