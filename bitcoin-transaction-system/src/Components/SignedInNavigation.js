@@ -28,15 +28,15 @@ const SignedInNavigation = () => {
 
     const buttons = {
         Client: [
-            { path: '/ClientDashboard', label: 'Dashboard' },
-            { path: '/ClientDashboard/BitcoinWallet', label: 'Wallet' },
-            { path: '/ClientDashboard/BuyBitcoin', label: 'Buy' },
-            { path: '/ClientDashboard/SellBitcoin', label: 'Sell' },
-            { path: '/ClientDashboard/TransferMoney', label: 'Transfer' },
-            { path: '/ClientDashboard/Orders', label: 'Orders' },
+            { path: '/ClientDashboard', label: 'dash' },
+            { path: '/ClientDashboard/BitcoinWallet', label: 'wallet' },
+            { path: '/ClientDashboard/BuyBitcoin', label: 'buy' },
+            { path: '/ClientDashboard/SellBitcoin', label: 'sell' },
+            { path: '/ClientDashboard/TransferMoney', label: 'transfer' },
+            { path: '/ClientDashboard/Orders', label: 'order' },
         ],
         Trader: [
-            { path: '/TraderDashboard', label: 'Dashboard' },
+            { path: '/TraderDashboard', label: 'dash' },
             { path: '/TraderDashboard/TraderClientSearch', label: 'Search' },
             { path: '/TraderDashboard/Cancel-Log', label: 'Cancel Log' },
         ],
