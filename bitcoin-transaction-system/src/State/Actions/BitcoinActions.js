@@ -31,13 +31,26 @@ export const fetchLatestCryptocurrencyForClientSell = (navigate) => (dispatch) =
 }
 
 
-
-export const fetchLatestCryptocurrencyForTrader = (navigate, clientId) => (dispatch) => {
+// api call to retrieve the current bitcoin price for trader
+export const fetchLatestCryptocurrencyForTraderBuy = (navigate, clientId) => (dispatch) => {
     dispatch({ type: BITCOIN_START });
     axiosWithAuth().get('/api/users/latest',)
         .then(response => {
             dispatch({ type: BITCOIN_SUCCESS, payload: response.data });
-            navigate(`/TraderClientSearch/clients/${clientId}/TraderBuyBitcoin`)
+            navigate(`/TraderDashboard/TraderClientSearch/clients/${clientId}/TraderBuyBitcoin`)
+        })
+        .catch(error => {
+            dispatch({ type: BITCOIN_FAILURE, payload: error.message });
+        });
+}
+
+// api call to retrieve the current bitcoin price for trader
+export const fetchLatestCryptocurrencyForTraderSell = (navigate, clientId) => (dispatch) => {
+    dispatch({ type: BITCOIN_START });
+    axiosWithAuth().get('/api/users/latest',)
+        .then(response => {
+            dispatch({ type: BITCOIN_SUCCESS, payload: response.data });
+            navigate(`/TraderDashboard/TraderClientSearch/clients/${clientId}/TraderSellBitcoin`)
         })
         .catch(error => {
             dispatch({ type: BITCOIN_FAILURE, payload: error.message });
