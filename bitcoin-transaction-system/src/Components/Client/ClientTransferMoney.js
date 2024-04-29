@@ -11,9 +11,23 @@ const TransferMoney = (props) => {
     const initialDisabled = true
     const [disabled, setDisabled] = useState(true)
 
-    const changes = (event) =>{
+    const change = (event) =>{
         event.preventDefault()
         setTransfer(event,ClientTransferMoneyFormSchema)
+    }
+
+    const handleDisabled = (event) => {
+        event.preventDefault()
+        if(transfer.transfer_amount > 0){
+            setDisabled(()=>({
+                disabled: !disabled
+            }))
+        }
+        else{
+            setDisabled(()=>({
+                disabled : disabled
+            }))
+        }
     }
 
     return(
