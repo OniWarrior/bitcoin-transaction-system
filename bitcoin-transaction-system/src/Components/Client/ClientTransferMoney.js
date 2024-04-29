@@ -43,10 +43,10 @@ const TransferMoney = (props) => {
             <div className="transfer-box">
                 <div className="transfer-container">
                     <Form className = "form-container" onSubmit = {onFormSubmit}>
-                        <h1> Trasnfer Money</h1>
+                        <h1> Transfer Money</h1>
                         <div className="input-group">
                             <label className="label-transfer">
-                                Trasnfer Amount:
+                                Transfer Amount:
                                 <input className="transfer-money-box"
                                     id = "transfer_amount"
                                     type = "text"
