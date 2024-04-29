@@ -42,6 +42,10 @@
    border:none;
 
 }
+.button-login:hover{
+    opacity:0.5;
+    animation: nav-button-animation linear 0.5s infinite;
+}
 
 .button-signup{
     background-image:url('../Assets/signup-icon.png');
@@ -56,6 +60,10 @@
    border-radius: 40%;
    border:none;
 }
+.button-signup:hover{
+    opacity: 0.5;
+    animation: nav-button-animation linear 0.5s infinite;
+}
 
 .button-buy{
     background-image: url('../Assets/buybitcoinimg.png');
@@ -64,11 +72,16 @@
     background-repeat: no-repeat;
     background-size: auto;
     background-attachment: scroll;
-
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    margin-top: 2em;
+    height:8em;
+    width:8em;
+    border-radius:50%;
     border:none;
+}
+
+.button-buy:hover{
+    opacity: 0.5;
+    animation:nav-button-animation linear 0.5s linear;
 }
 
 .button-sell{
@@ -79,11 +92,17 @@
     background-size: auto;
     background-attachment: scroll;
 
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    height:8em;
+    width:8em;
+    border-radius:50%;
     border:none;
+    margin-top: 2em;
 
+}
+
+.button-sell:hover{
+    opacity: 0.5;
+    animation: nav-button-animation linear 0.5s infinite;
 }
 
 .button-wallet{
@@ -94,10 +113,15 @@
     background-size: auto;
     background-attachment: scroll;
 
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    height:8em;
+    width:8em;
+    border-radius:50%;
     border:none;
+    margin-top: 3em;
+}
+.button-wallet:hover{
+    opacity:0.5;
+    animation: nav-button-animation linear 0.5s infinite;
 }
 
 .button-transfer{
@@ -108,10 +132,15 @@
     background-size: auto;
     background-attachment: scroll;
 
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    height:8em;
+    width:8em;
+    border-radius:50%;
     border:none;
+    margin-top:3em ;
+}
+.button-transfer:hover{
+    opacity: 0.5;
+    animation:nav-button-animation linear 0.5s infinite;
 }
 
 .button-order{
@@ -122,10 +151,11 @@
     background-size: auto;
     background-attachment: scroll;
 
-    height:10em;
-    width:10em;
-    border-radius:40%;
+    height:8em;
+    width:8em;
+    border-radius:50%;
     border:none;
+    margin-top: 3em;
 }
 
 .button-dash{
@@ -136,10 +166,15 @@
     background-size:auto;
     background-attachment: scroll;
     margin-top:3.3em;
-    height:3.5em;
-    width:3.5em;
+    height:8em;
+    width:8em;
     border-radius: 50%;
     border:none;
+    margin-bottom: 5em;
+}
+.button-dash:hover{
+    opacity: 0.5s;
+    animation: nav-button-animation linear 0.5s infinite;
 }
 
 .button-search{
