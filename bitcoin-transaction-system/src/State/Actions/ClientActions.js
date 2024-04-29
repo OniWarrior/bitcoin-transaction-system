@@ -9,7 +9,7 @@ dispatch({type:CLIENT_START,})
 axiosWithAuth().get('/api/users.BitcoinWallet')
 .then(response=>{
     dispatch({type:CLIENT_SUCCESS,payload:response.data})
-    navigate('ClientDashboard/BitcoinWallet')
+    navigate('/ClientDashboard/BitcoinWallet')
 })
 .catch(err=>{
     dispatch({type:CLIENT_FAILURE,payload:err.message})
