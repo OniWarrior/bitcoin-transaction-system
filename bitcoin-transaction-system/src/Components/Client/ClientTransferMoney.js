@@ -1,11 +1,20 @@
 import { connect } from "react-redux"
 import { postMoneyTransfer } from "../../State/Actions/ClientActions"
-import ClientTransferMoenyFormSchema from '../../FormSchemas/ClientTransferMoneyFormSchema'
+import ClientTransferMoneyFormSchema from '../../FormSchemas/ClientTransferMoneyFormSchema'
 import { useTransferValidation } from '../../Hooks/useTransferValidation.js'
 import SignedInValidation from '../SignedInNavigation.js'
+import { useState } from "react"
 
 
 const TransferMoney = (props) => {
+    const[transfer,errors,setTransfer] = useTransferValidation(ClientTransferMoneyFormSchema)
+    const initialDisabled = true
+    const [disabled, setDisabled] = useState(true)
+
+    const changes = (event) =>{
+        event.preventDefault()
+        setTransfer(event,ClientTransferMoneyFormSchema)
+    }
 
     return(
         <div className = "transfer-container">
