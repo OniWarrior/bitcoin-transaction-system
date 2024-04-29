@@ -3,11 +3,11 @@ import * as yup from 'yup'
 
 
 const initialValues = {
-    trasnfer_amount: ''
+    amount_paid: ''
 }
 
 const initialErrors = {
-    transfer_amount: ''
+    amount_paid: ''
 }
 
 export const useTransferValidation = (schema) => {
