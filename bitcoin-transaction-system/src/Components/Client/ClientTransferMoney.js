@@ -1,8 +1,17 @@
 import { connect } from "react-redux"
-import{ postMoneyTransfer } from "../../State/Actions/ClientActions"
+import { postMoneyTransfer } from "../../State/Actions/ClientActions"
+import ClientTransferMoenyFormSchema from '../../FormSchemas/ClientTransferMoneyFormSchema'
+import { useTransferValidation } from '../../Hooks/useTransferValidation.js'
+import SignedInValidation from '../SignedInNavigation.js'
 
 
 const TransferMoney = (props) => {
+
+    return(
+        <div className = "transfer-container">
+            <SignedInValidation />
+        </div>
+    )
 
 }
 
