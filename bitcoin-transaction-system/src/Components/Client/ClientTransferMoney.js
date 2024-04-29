@@ -4,9 +4,11 @@ import ClientTransferMoneyFormSchema from '../../FormSchemas/ClientTransferMoney
 import { useTransferValidation } from '../../Hooks/useTransferValidation.js'
 import SignedInValidation from '../SignedInNavigation.js'
 import { useState } from "react"
+import { useNavigate } from "react-router"
 
 
 const TransferMoney = (props) => {
+    const navigate = useNavigate()
     const[transfer,errors,setTransfer] = useTransferValidation(ClientTransferMoneyFormSchema)
     const initialDisabled = true
     const [disabled, setDisabled] = useState(true)
@@ -28,6 +30,11 @@ const TransferMoney = (props) => {
                 disabled : disabled
             }))
         }
+    }
+
+    const onFormSubmit = (event) =>{
+        event.preventDefault()
+        props.postMoneyTransfer(transfer, navigate)
     }
 
     return(
