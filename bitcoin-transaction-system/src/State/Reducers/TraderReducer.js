@@ -10,7 +10,7 @@ const initialState = {
     error:''
 }
 
-export const TraderReducer = (state = initialState,action)=>{
+export const traderReducer = (state = initialState,action)=>{
     switch(action.type){
         case TRADER_START:
             return{...state, loading:true}
