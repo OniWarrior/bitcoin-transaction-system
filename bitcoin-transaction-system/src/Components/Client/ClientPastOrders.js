@@ -1,6 +1,7 @@
 import { connect } from "react-redux"
 import PastOrderCard from "./PastOrder"
 import SignedInNavigation from "../SignedInNavigation"
+import '../../Styles/PastOrdersList.css'
 
 const PastOrders = (props) => {
     if(!props.client || props.client.length===0)
