@@ -16,9 +16,6 @@ axiosWithAuth().get('/api/users.BitcoinWallet')
 })
 }
 
-
-
-
 export const getPastOrders=(navigate)=>(dispatch)=>{
     dispatch({type:CLIENT_START})
     axiosWithAuth().get('/api/users/Orders')
