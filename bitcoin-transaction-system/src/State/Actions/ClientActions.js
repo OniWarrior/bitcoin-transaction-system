@@ -61,8 +61,9 @@ export const postMoneyTransfer=(transfer,navigate)=>(dispatch)=>{
     .then(response=>{
         dispatch({type:CLIENT_SUCCESS,payload:response.data})
         navigate('/ClientDashboard')
+        alert(response.data)
     })
-    .catch(eer=>{
+    .catch(err=>{
         dispatch({type:CLIENT_FAILURE,payload:err.message})
     })
 }
