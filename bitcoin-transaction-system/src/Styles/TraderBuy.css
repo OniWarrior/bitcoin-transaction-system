@@ -22,4 +22,39 @@
     text-decoration: none;
     background-color: black;
     border: none;
+    color: white;
+    box-shadow: 2px 2px 2px p2x rgba(128, 128, 128, 0.301);
+    background-color: rgb(247, 128, 47);
+}
+
+.trader-button-container{
+    height: 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.trader-button-container button:hover{
+    animation: button-animation ease-in 0.3s;
+    transform: scale(1,9);
+}
+
+@keyframes button-animation{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(1,9);
+    }
+}
+
+.errors{
+    color: red;
+}
+
+@media screen and (max-width:480px){
+    .container{
+        border-radius: 30px;
+    }
+    
 }
