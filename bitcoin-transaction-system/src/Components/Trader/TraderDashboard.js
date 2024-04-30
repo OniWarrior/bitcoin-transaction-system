@@ -28,6 +28,17 @@ const TraderDashboard = () => {
                             <h2>Go To Client Search</h2>
                             <hr/>
 
+                            <button className="card-button" onClick={goToClientSearch}>Client Search</button>
+
+                        </div>
+                    </div>
+                    <div className="trader-card">
+                        <div className="trader-card-group">
+                            <h2>go To Cancel Log</h2>
+                            <hr/>
+
+                            <button className="card-button" onClick={goToCancelLog}>Cancel Log</button>
+
                         </div>
                     </div>
                 </div>
