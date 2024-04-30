@@ -27,4 +27,6 @@ const mapStateToProps = (state) => {
     }
 }
 
+const mapDispatchToProps = { getBitCointWallet }
+
 export default connect(mapStateToProps)(BitcoinWallet);
