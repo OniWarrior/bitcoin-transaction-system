@@ -34,6 +34,9 @@ export const postBuyBitcoin=(order,navigate)=>(dispatch)=>{
     .then(response=>{
         dispatch({type:CLIENT_SUCCESS,payload:response.data})
         navigate('/ClientDashboard')
+
+        const{message,amount}=response.data;
+        alert('message:${message}\namount: ${amount}');
     })
     .catch(err=>{
         dispatch({type:CLIENT_FAILURE,payload:err.message})
@@ -46,6 +49,7 @@ export const postSellBitcoin=(order,navigate)=>(dispatch)=>{
     .then(response=>{
         dispatch({type:CLIENT_SUCCESS,payload:response.data})
         navigate('/ClientDashboard')
+        alert(response.data)
     })
     .catch(err=>{
         dispatch({type:CLIENT_FAILURE,payload:err.message})
