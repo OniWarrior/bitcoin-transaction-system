@@ -1,4 +1,5 @@
 import { connect } from "react-redux"
+import { getPastOrders } from "../../State/Actions/ClientActions"
 
 const PastOrders = (props) => {
 
@@ -12,4 +13,6 @@ const mapStateToProps = (state) =>{
     }
 }
 
-export default connect (mapStateToProps)(PastOrders)
+const mapDispatchtoProps = getPastOrders
+
+export default connect (mapStateToProps, mapDispatchtoProps)(PastOrders)
