@@ -6,7 +6,7 @@ import SignedInValidation from '../SignedInNavigation.js'
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Form } from "react-router-dom"
-import '../../Styles/ClientTranfser.css'
+import '../../Styles/ClientTransfer.css'
 
 
 const TransferMoney = (props) => {
@@ -87,6 +87,6 @@ const mapStateToProps = (state) =>{
     }
 }
 
-const mapDispatchToProps = { postMoneyTransfer }
+const mapDispatchToProps =  postMoneyTransfer 
 
 export default connect (mapStateToProps, mapDispatchToProps)(TransferMoney)
