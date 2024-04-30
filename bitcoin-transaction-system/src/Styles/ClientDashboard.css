@@ -10,7 +10,7 @@
 
     margin: auto;
     background-repeat: no-repeat;
-    background-image: url(bitcoin-transaction-system\src\Assets\bitcoin_head_small.png);
+    background-image: url("../Assets/bitcoin_head_small.png");
     height: 70em;
     width: 70em;
     background-attachment: scroll;
