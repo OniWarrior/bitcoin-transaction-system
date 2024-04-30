@@ -1,6 +1,4 @@
-
-
-.client-container{
+.trader-container{
 
     min-height:35em;
 
@@ -10,7 +8,7 @@
 
     margin: auto;
     background-repeat: no-repeat;
-    background-image: url("../Assets/bitcoin_head_small.png");
+    background-image: url("../Assets/bitcoin_invest.jpg");
     height: 70em;
     width: 70em;
     background-attachment: scroll;
@@ -25,7 +23,7 @@
 
 }
 
-.client-card{
+.trader-card{
     color: white;
     height:10em;
     width: 10em;
@@ -49,4 +47,3 @@
     box-shadow: 2px 2px 2px 2px rgba(128,128,128,0.301);
     background-color: rgb(247,128,47);
 }
-

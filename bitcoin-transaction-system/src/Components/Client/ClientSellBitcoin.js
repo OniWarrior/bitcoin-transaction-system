@@ -1,4 +1,6 @@
 import { connect } from "react-redux"
+import { postSellBitcoin } from "../../State/Actions/ClientActions"
+
 
 const SellBitcoin = (props) => {
 
@@ -12,4 +14,6 @@ const mapStateToProps = (state) =>{
     }
 }
 
-export default connect (mapStateToProps)(SellBitcoin)
+const mapDispatchtoProps = postSellBitcoin
+
+export default connect (mapStateToProps, mapDispatchtoProps)(SellBitcoin)

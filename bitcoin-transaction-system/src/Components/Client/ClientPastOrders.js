@@ -2,6 +2,8 @@ import { connect } from "react-redux"
 import PastOrderCard from "./PastOrder"
 import SignedInNavigation from "../SignedInNavigation"
 import '../../Styles/PastOrdersList.css'
+import { getPastOrders } from "../../State/Actions/ClientActions"
+
 
 const PastOrders = (props) => {
     if(!props.client || props.client.length===0)
@@ -31,4 +33,6 @@ const mapStateToProps = (state) =>{
     }
 }
 
-export default connect (mapStateToProps)(PastOrders)
+const mapDispatchtoProps = getPastOrders
+
+export default connect (mapStateToProps, mapDispatchtoProps)(PastOrders)
