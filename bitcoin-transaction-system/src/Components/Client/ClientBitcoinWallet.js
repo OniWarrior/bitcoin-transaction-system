@@ -1,4 +1,5 @@
 import { connect } from "react-redux";
+import { getBitCointWallet } from "../../State/Actions/ClientActions";
 import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/BitcoinWallet.css'
 
