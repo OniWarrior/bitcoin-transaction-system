@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { getBitCointWallet } from "../../State/Actions/ClientActions";
+import { getBitcoinWallet } from "../../State/Actions/ClientActions";
 import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/BitcoinWallet.css'
 
@@ -27,6 +27,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = { getBitCointWallet }
+const mapDispatchToProps = { getBitcoinWallet }
 
-export default connect(mapStateToProps)(BitcoinWallet);
+export default connect(mapStateToProps, mapDispatchToProps)(BitcoinWallet);

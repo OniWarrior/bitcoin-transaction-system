@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import {  postBuyBitcoin, postSellBitcoin } from "../../State/Actions/ClientActions"
+import {  postBuyBitcoin} from "../../State/Actions/ClientActions"
 
 
 const BuyBitcoin = (props) => {

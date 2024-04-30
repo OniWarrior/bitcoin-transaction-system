@@ -87,6 +87,6 @@ const mapStateToProps = (state) =>{
     }
 }
 
-const mapDispatchToProps = { postMoneyTransfer }
+const mapDispatchToProps =  postMoneyTransfer 
 
 export default connect (mapStateToProps, mapDispatchToProps)(TransferMoney)
