@@ -1,7 +1,16 @@
+import { connect } from "react-redux"
+import SignedInNavigation from "../SignedInNavigation"
 
-
-const CancelLog = () => {
+const CancelLog = (props) => {
 
 }
 
-export default CancelLog
+const mapStateToProps=(state)=>{
+    return{
+        trader: state.tradeReducer.trader,
+        loading: state.tradeReducer.loading,
+        error: state.tradeReducer.error
+    }
+}
+
+export default connect(mapStateToProps)(CancelLog)

@@ -34,7 +34,7 @@ const TraderDashboard = (props) => {
                     </div>
                     <div className="trader-card">
                         <div className="trader-card-group">
-                            <h2>go To Cancel Log</h2>
+                            <h2>Go To Cancel Log</h2>
                             <hr/>
 
                             <button className="card-button" onClick={goToCancelLog}>Cancel Log</button>
