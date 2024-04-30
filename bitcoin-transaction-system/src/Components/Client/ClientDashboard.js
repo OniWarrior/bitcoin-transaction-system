@@ -5,11 +5,9 @@ import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/ClientDashboard.css'
 import { getPastOrders } from "../../State/Actions/ClientActions";
 import { useNavigate } from "react-router";
-<<<<<<< Updated upstream
-import { fetchLatestCryptocurrency } from "../../State/Actions/BitcoinActions";
-=======
-import { fetchLatestCryptoCurrencyForClient} from "../../State/Actions/BitcoinActions.js";
->>>>>>> Stashed changes
+import { fetchLatestCryptoCurrencyForClientBuy} from "../../State/Actions/BitcoinActions.js";
+import { fetchLatestCryptoCurrencyForClientSell} from "../../State/Actions/BitcoinActions.js";
+
 
 const ClientDashboard = (props) => {
     //local state vars
@@ -27,22 +25,12 @@ const ClientDashboard = (props) => {
 
     const goToBuyBitcoin=(e)=>{
         e.preventDefault()
-<<<<<<< Updated upstream
-        props.fetchLatestCryptocurrency()
-        navigate('/ClientDashboard/BuyBitcoin')
-=======
-        props.fetchLatestCryptoCurrencyForClient(navigate)
->>>>>>> Stashed changes
+        props.fetchLatestCryptoCurrencyForClientBuy(navigate)
     }
 
     const goToSellBitcoin=(e)=>{
         e.preventDefault()
-<<<<<<< Updated upstream
-        props.fetchLatestCryptocurrency()
-        navigate('/ClientDashboard/SellBitcoin')
-=======
-        props.fetchLatestCryptoCurrencyForClient(navigate)
->>>>>>> Stashed changes
+        props.fetchLatestCryptoCurrencyForClientSell(navigate)
     }
 
     const goToMoneyTransfer=(e)=>{
@@ -109,9 +97,5 @@ const mapStateToProps = (state) =>{
     }
 }
 
-<<<<<<< Updated upstream
-const mapDispatchToProps = { getBitcoinWallet, getPastOrders, fetchLatestCryptocurrency }
-=======
-const mapDispatchToProps = { getBitcoinWallet, getPastOrders,fetchLatestCryptoCurrencyForClient}
->>>>>>> Stashed changes
+const mapDispatchToProps = { getBitcoinWallet, getPastOrders,fetchLatestCryptoCurrencyForClientBuy, fetchLatestCryptoCurrencyForClientSell}
 export default connect (mapStateToProps, mapDispatchToProps)(ClientDashboard)
