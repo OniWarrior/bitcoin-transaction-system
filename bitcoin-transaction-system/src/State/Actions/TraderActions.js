@@ -20,3 +20,17 @@ export const getCancelLog=(navigate) =>(dispatch)=>{
     })
 
 }
+
+export const postTraderBuyBitcoinTransaction = (client,navigate) => (dispatch) =>{
+    dispatch({ type: TRADER_START})
+    axiosWithAuth().post('/api/users/TraderBuyBitcoin',client)
+    .then(response =>{
+        dispatch({type: TRADER_SUCCESS, payload: response.data})
+        navigate('TraderDashboard')
+        const {message, amount} = response.data;
+        alert('message: ${message}\namount: ${amount}');
+    })
+    .catch(err =>{
+        dispatch({type: TRADER_FAILURE, payload: err.message})
+    })
+}
