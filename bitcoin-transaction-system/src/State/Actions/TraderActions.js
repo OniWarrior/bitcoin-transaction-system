@@ -18,5 +18,17 @@ export const getCancelLog=(navigate) =>(dispatch)=>{
     .catch(err=>{
         dispatch({type: TRADER_FAILURE, payload:err.message})
     })
+}
 
+export const getClient = (client,navigate) => (dispatch) => {
+    dispatch({ type: TRADER_START })
+    axiosWithAuth().post('/api/users/client/search',client)
+        .then(response => {
+            dispatch({ type: TRADER_SUCCESS, payload: response.data})
+            navigate('/TraderDashboard/TraderClientSearch/clients/search')
+        })
+        .catch(err => {
+            dispatch({ type: TRADER_FAILURE, payload: err.massage})
+        })
+        
 }
