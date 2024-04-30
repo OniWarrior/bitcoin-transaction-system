@@ -10,8 +10,7 @@ const TraderDashboard = (props) => {
 
     const goToCancelLog=(e)=>{
         e.preventDefault()
-        //Replace with api call
-        navigate('/Cancel-log')
+        props.getCancelLog(navigate)
     }
 
     const goToClientSearch=(e)=>{

@@ -12,7 +12,7 @@ export const getCancelLog=(navigate) =>(dispatch)=>{
     dispatch({type: TRADER_START})
     axiosWithAuth().get('api/users/cancel-log')
     .then(response=>{
-        dispatch({type: TRADER_SUCCESS, payload: Response.data})
+        dispatch({type: TRADER_SUCCESS, payload: response.data})
         navigate('/TraderDashboard/Cancel-Log')
     })
     .catch(err=>{
