@@ -25,7 +25,9 @@ const TraderDashboard = () => {
                 <div className="trader-container">
                     <div className="trader-card">
                         <div className="trader-card-group">
-                            
+                            <h2>Go To Client Search</h2>
+                            <hr/>
+
                         </div>
                     </div>
                 </div>
