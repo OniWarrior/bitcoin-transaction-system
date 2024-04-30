@@ -3,8 +3,9 @@ import React from "react";
 import SignedInNavigation from "../SignedInNavigation";
 import '../../Styles/TraderDashboard.css'
 import { useNavigate } from "react-router";
+import { getCancelLog } from "../../State/Actions/TraderActions";
 
-const TraderDashboard = () => {
+const TraderDashboard = (props) => {
     const navigate = useNavigate()
 
     const goToCancelLog=(e)=>{
@@ -48,4 +49,14 @@ const TraderDashboard = () => {
 
 }
 
-export default TraderDashboard
+const mapStateToProps=(state)=>{
+    return{
+        trader: state.traderReducer.trader,
+        loading: state.traerReducer.loading,
+        error: state.traderReducer.error
+    }
+}
+
+const mapDispatchToProps = (getCancelLog)
+
+export default connect(mapStateToProps, mapDispatchToProps)(TraderDashboard)
