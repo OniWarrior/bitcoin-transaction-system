@@ -9,3 +9,17 @@ const initialState = {
     loading:'',
     error:''
 }
+
+export const TraderReducer = (state = initialState,action)=>{
+    switch(action.type){
+        case TRADER_START:
+            return{...state, loading:true}
+        case TRADER_SUCCESS:
+            return{...state,trader: action.payload, loading: false}
+        case TRADER_FAILURE:
+            return{...state,error: action.payload, loading: false}
+        default:
+            return state;
+    }
+}
+
