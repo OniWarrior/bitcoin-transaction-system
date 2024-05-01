@@ -21,3 +21,27 @@ export const fetchLastestCryptocurrency = () => (dispatch) => {
             dispatch({type: BITCOIN_FAILURE, payload: error.message });
         });
 }
+
+export const fetchLastestCryptocurrencyForTraderBuy = (navigate,clientId) => (dispatch) => {
+    dispatch({ type: BITCOIN_START });
+    axiosWithAuth().get('/api/users/latest',)
+        .then(response => {
+            dispatch({ type: BITCOIN_SUCCESS, payload: response.data});
+            navigate(`/TraderDashboard/TraderClientSearch/clients/${clientId}/TraderBuyBitcoin`)
+        })
+        .catch(err => {
+            dispatch({ type: BITCOIN_FAILURE, payload: err.message});
+        })
+}
+
+export const fetchLastestCryptocurrencyForTraderSell = (navigate,clientId) => (dispatch) => {
+    dispatch({ type: BITCOIN_START });
+    axiosWithAuth().get('/api/users/latest',)
+        .then(response => {
+            dispatch({ type: BITCOIN_SUCCESS, payload: response.data});
+            navigate(`/TraderDashboard/TraderClientSearch/clients/${clientId}/TraderSellBitcoin`)
+        })
+        .catch(err => {
+            dispatch({ type: BITCOIN_FAILURE, payload: err.message});
+        })
+}
