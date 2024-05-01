@@ -17,33 +17,55 @@ export const getCancelLog=(navigate) =>(dispatch)=>{
     .catch(err=>{
         dispatch({type: TRADER_FAILURE, payload:err.message})
     })
-
 }
 
-export const postTraderBuyBitcoinTransaction = (client,navigate) => (dispatch) =>{
-    dispatch({ type: TRADER_START})
-    axiosWithAuth().post('/api/users/TraderBuyBitcoin',client)
-    .then(response =>{
-        dispatch({type: TRADER_SUCCESS, payload: response.data})
-        navigate('/TraderDashboard')
-        const {message, amount} = response.data;
-        alert('message: ${message}\namount: ${amount}');
-    })
-    .catch(err =>{
-        dispatch({type: TRADER_FAILURE, payload: err.message})
-    })
+export const getClient = (client,navigate) => (dispatch) => {
+    dispatch({ type: TRADER_START })
+    axiosWithAuth().post('/api/users/client/search',client)
+        .then(response => {
+            dispatch({ type: TRADER_SUCCESS, payload: response.data})
+            navigate('/TraderDashboard/TraderClientSearch/clients/search')
+        })
+        .catch(err => {
+            dispatch({ type: TRADER_FAILURE, payload: err.message})
+        })
 }
 
-export const postTraderSellBitcoinTransaction = (client,navigate) => (dispatch) =>{
-    dispatch({ type: TRADER_START})
-    axiosWithAuth().post('/api/users/TraderSellBitcoin',client)
-    .then(response =>{
-        dispatch({type: TRADER_SUCCESS, payload: response.data})
-        navigate('/TraderDashboard')
-        const {message, amount} = response.data;
-        alert('message: ${message}\namount: ${amount}');
-    })
-    .catch(err =>{
-        dispatch({type: TRADER_FAILURE, payload: err.message})
-    })
+export const getTransfersAndTransactions = (clientId,navigate) => (dispatch) => {
+    dispatch({ type: Trader_START });
+    axiosWithAuth().get(`/client/${clientId}/payments-and-transactions`)
+        .then(response => {
+            dispatch({ type: TRADER_SUCCESS, payload: response.data})
+            navigate(`/TraderDashboard/TraderClientSearch/clients/${clientId}/payments-and-`)
+        })
+        .catch(err => {
+            dispatch({ type: TRADER_FAILURE, payload: err.message})
+        })
+}
+
+export const postTraderBuyBitcoinTransaction = (clientId,navigate) => (dispatch) => {
+    dispatch({ type: Trader_START });
+    axiosWithAuth().post('/TraderBuyBitcoin',client)
+        .then(response => {
+            dispatch({ type: TRADER_SUCCESS, payload: response.data})
+            navigate('/TraderDashboard')
+            const {message, amount } = response.data;
+            alert(`message: ${message}\namount: ${amount}`);
+        })
+        .catch(err => {
+            dispatch({ type: TRADER_FAILURE, payload: err.message})
+        })
+}
+export const postTraderSellBitcoinTransaction = (clientId,navigate) => (dispatch) => {
+    dispatch({ type: Trader_START });
+    axiosWithAuth().post('/TraderSellBitcoin',client)
+        .then(response => {
+            dispatch({ type: TRADER_SUCCESS, payload: response.data})
+            navigate('/TraderDashboard')
+            const {message, amount } = response.data;
+            alert(`message: ${message}\namount: ${amount}`);
+        })
+        .catch(err => {
+            dispatch({ type: TRADER_FAILURE, payload: err.message})
+        })
 }
