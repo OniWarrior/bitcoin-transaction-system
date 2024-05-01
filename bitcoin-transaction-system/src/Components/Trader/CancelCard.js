@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux"
 import '../../Styles/CancelCard.css'
 
 const CancelCard=(props)=>{
@@ -31,11 +30,5 @@ const CancelCard=(props)=>{
     )
 }
 
-const mapStateToProps=(state)=>{
-    return{
-        client:state.clientReducer.client,
-        loading:state.clientReducer.loading,
-        error:state.clientReducer.error
-    }
-}
-export default connect(mapStateToProps)(CancelCard)
+
+export default CancelCard
