@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux"
 import '../../Styles/CancelCard.css'
 
 const CancelCard=(props)=>{

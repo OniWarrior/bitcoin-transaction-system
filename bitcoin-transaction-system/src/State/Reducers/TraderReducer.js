@@ -23,3 +23,5 @@ export const traderReducer = (state = initialState,action)=>{
     }
 }
 
+export default traderReducer
+

@@ -1,5 +1,5 @@
 import { connect } from "react-redux"
-import { useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router"
 import { postSellBitcoin } from "../../State/Actions/ClientActions"
 import ClientSellBitcoinFormSchema from "../../FormSchemas/ClientSellBitcoinFormSchema"
 import { useSellBitcoinValidation } from "../../Hooks/useSellBitcoinValidation"
@@ -11,7 +11,7 @@ import { Form } from "react-bootstrap"
 
 const SellBitcoin = (props) => {
     const navigate = useNavigate()
-    const [getPastOrders, errors, SetOrder] = useSellBitcoinValidation(ClientSellBitcoinFormSchema)
+    const [order, errors, SetOrder] = useSellBitcoinValidation(ClientSellBitcoinFormSchema)
     const initialDisabled = true
     const [disabled, setDisabled] = useState(initialDisabled)
 
@@ -23,14 +23,14 @@ const SellBitcoin = (props) => {
     const handleDisabled = (event) =>{
         event.preventDefault()
         if(order.Bitcoin_balance > 0 && order.comm_type){
-            setDisabled(() => {{
+            setDisabled(() => ({
                 disabled: !disabled
-            }})
+            }))
         }
         else{
-            setDisabled(() => {{
+            setDisabled(() => ({
                 disabled: disabled
-            }})
+            }))
         }
     }
 

@@ -1,10 +1,9 @@
-import axios from 'axios'
+import axiosWithAuth from '../../Components/Utils/AxiosWithAuth'
+export const BITCOIN_START='BITCOIN_START'
+export const BITCOIN_SUCCESS='BITCOIN_SUCCESS'
+export const BITCOIN_FAILURE='BITCOIN_FAILURE'
 
-export const BITCOIN_START = 'BITCOIN_START'
-export const BITCOIN_SUCCESS = 'BITCOIN_SUCCESS'
-export const BITCOIN_FAILURE = 'BITCOIN_FAILURE'
-
-export const fetchLastestCryptocurrency = () => (dispatch) => {
+export const fetchLatestCryptocurrency = () => (dispatch) => {
     dispatch({ type: BITCOIN_START });
 
     const config = {
@@ -12,17 +11,65 @@ export const fetchLastestCryptocurrency = () => (dispatch) => {
             'X-CMC_PRO_API_KEY': 'a6f492ca-a732-4331-976f-e9a31e270372',
         }
     };
-
-    axios.get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', config)
+    axiosWithAuth().get('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', config)
         .then(response => {
             dispatch({type: BITCOIN_SUCCESS, payload: response.data });
         })
         .catch(error => {
             dispatch({type: BITCOIN_FAILURE, payload: error.message });
         });
+
 }
 
-export const fetchLastestCryptocurrencyForTraderBuy = (navigate,clientId) => (dispatch) => {
+export const fetchLatestCryptoCurrencyForClient=(navigate)=>(dispatch)=>{
+    dispatch({type:BITCOIN_START});
+    axiosWithAuth().get('/api/users/latest',)
+    .then(response=>{
+       dispatch({type:BITCOIN_SUCCESS,payload:response.data})
+       navigate('/ClientDashboard/BuyBitcoin')
+    })
+    .catch(error=>{
+        dispatch({type:BITCOIN_FAILURE,payload:error.message});
+    });
+}
+
+export const fetchLatestCryptoCurrencyForClientBuy=(navigate)=>(dispatch)=>{
+    dispatch({type:BITCOIN_START});
+    axiosWithAuth().get('/api/users/latest',)
+    .then(response=>{
+       dispatch({type:BITCOIN_SUCCESS,payload:response.data})
+       navigate('/ClientDashboard/BuyBitcoin')
+    })
+    .catch(error=>{
+        dispatch({type:BITCOIN_FAILURE,payload:error.message});
+    });
+}
+
+export const fetchLatestCryptoCurrencyForClientSell=(navigate)=>(dispatch)=>{
+    dispatch({type:BITCOIN_START});
+    axiosWithAuth().get('/api/users/latest',)
+    .then(response=>{
+       dispatch({type:BITCOIN_SUCCESS,payload:response.data})
+       navigate('/ClientDashboard/SellBitcoin')
+    })
+    .catch(error=>{
+        dispatch({type:BITCOIN_FAILURE,payload:error.message});
+    });
+}
+
+export const fetchLatestCryptoCurrencyForTrader=(navigate,clientId)=>(dispatch)=>{
+   dispatch({type:BITCOIN_START}); 
+   axiosWithAuth().get('/api/users/latest',)
+    .then(response=>{
+        dispatch({type:BITCOIN_SUCCESS,payload:response.data});
+        navigate('/TraderClientSearch/clients/${clientId}/TraderBuyBitcoin');
+    })
+    .catch(error=>{
+        dispatch({type:BITCOIN_FAILURE,payload:error.message});
+    });
+}
+
+export const fetchLatestCryptocurrencyForTraderBuy = (navigate,clientId) => (dispatch) => {
     dispatch({ type: BITCOIN_START });
     axiosWithAuth().get('/api/users/latest',)
         .then(response => {
@@ -34,7 +81,7 @@ export const fetchLastestCryptocurrencyForTraderBuy = (navigate,clientId) => (di
         })
 }
 
-export const fetchLastestCryptocurrencyForTraderSell = (navigate,clientId) => (dispatch) => {
+export const fetchLatestCryptocurrencyForTraderSell = (navigate,clientId) => (dispatch) => {
     dispatch({ type: BITCOIN_START });
     axiosWithAuth().get('/api/users/latest',)
         .then(response => {

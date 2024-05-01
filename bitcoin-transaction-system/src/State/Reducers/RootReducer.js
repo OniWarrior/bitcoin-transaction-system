@@ -3,8 +3,8 @@ import signupReducer from "./SignupReducer";
 import loginReducer from "./LoginReducer";
 import managerReducer from "./ManagerReducer";
 import clientReducer from "./ClientReducer";
-import { TraderReducer, traderReducer } from "./TraderReducer";
 import { bitcoinReducer } from "./BitcoinReducer";
+import traderReducer from "./TraderReducer"
 
 const rootReducer = combineReducers({
     signupReducer,
