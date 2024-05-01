@@ -56,7 +56,7 @@ const TransferMoney = (props) => {
                                 <input className="transfer-money-box"
                                     id = "amount_paid"
                                     type = "number"
-                                    name = "number_paid"
+                                    name = "amount_paid"
                                     placeholder="Transfer Amount"
                                     required
                                     onChange={change}
