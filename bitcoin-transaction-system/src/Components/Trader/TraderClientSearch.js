@@ -102,7 +102,7 @@ return (
     </div>
 )
 
-const mapStateToprops = (state) =>{
+const mapStateToProps = (state) =>{
     return {
         trader: state.traderReducer.trader,
         login: state.traderReducer.login,
