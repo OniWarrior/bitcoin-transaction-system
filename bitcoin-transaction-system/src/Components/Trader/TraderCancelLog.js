@@ -26,9 +26,9 @@ const CancelLog = (props) => {
 
 const mapStateToProps=(state)=>{
     return{
-        trader: state.tradeReducer.trader,
-        loading: state.tradeReducer.loading,
-        error: state.tradeReducer.error
+        trader: state.traderReducer.trader,
+        loading: state.traderReducer.loading,
+        error: state.traderReducer.error
     }
 }
 
