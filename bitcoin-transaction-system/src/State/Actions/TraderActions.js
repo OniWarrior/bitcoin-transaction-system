@@ -45,7 +45,7 @@ export const getTransfersAndTransactions = (clientId,navigate) => (dispatch) => 
 
 export const postTraderBuyBitcoinTransaction = (clientId,navigate) => (dispatch) => {
     dispatch({ type: Trader_START });
-    axiosWithAuth().post('/TraderBuyBitcoin',client)
+    axiosWithAuth().post('/api/user/TraderBuyBitcoin',client)
         .then(response => {
             dispatch({ type: TRADER_SUCCESS, payload: response.data})
             navigate('/TraderDashboard')
