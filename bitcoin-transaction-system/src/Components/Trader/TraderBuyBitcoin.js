@@ -48,4 +48,4 @@ const mapStateToProps = (state) =>{
 
 const mapDispatchToProps = { postTraderBuyBitcoinTransaction}
 
-export default connect (apStateToProps, mapDispatchToProps)(TraderBuyBitcoin)
+export default connect (mapStateToProps, mapDispatchToProps)(TraderBuyBitcoin)

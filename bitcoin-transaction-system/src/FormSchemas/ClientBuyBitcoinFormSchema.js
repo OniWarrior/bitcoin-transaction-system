@@ -1,4 +1,4 @@
-
+import * as yup from 'yup'
 
 
 
@@ -25,4 +25,4 @@ const ClientBuyBitcoinFromSchema=yup.object().shape({
 
 })
 
-export default ClientBuyBitcoinFormSchema
+export default ClientBuyBitcoinFromSchema

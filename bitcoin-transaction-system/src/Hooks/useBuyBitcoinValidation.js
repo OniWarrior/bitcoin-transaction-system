@@ -41,5 +41,5 @@ export const useBuyBitcoinValidation=(schema)=>{
     
         };
 
-        return[data,errors,onInputCharge]
+        return[data,errors,onInputChange]
 }
