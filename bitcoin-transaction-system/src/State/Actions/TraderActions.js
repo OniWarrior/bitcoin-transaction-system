@@ -31,18 +31,6 @@ export const getClient = (client,navigate) => (dispatch) => {
         })
 }
 
-export const getTransfersAndTransactions = (clientId,navigate) => (dispatch) => {
-    dispatch({ type: Trader_START });
-    axiosWithAuth().get(`/client/${clientId}/payments-and-transactions`)
-        .then(response => {
-            dispatch({ type: TRADER_SUCCESS, payload: response.data})
-            navigate(`/TraderDashboard/TraderClientSearch/clients/${clientId}/payments-and-`)
-        })
-        .catch(err => {
-            dispatch({ type: TRADER_FAILURE, payload: err.message})
-        })
-}
-
 export const postTraderBuyBitcoinTransaction = (clientId,navigate) => (dispatch) => {
     dispatch({ type: Trader_START });
     axiosWithAuth().post('/api/user/TraderBuyBitcoin',client)
