@@ -5,7 +5,8 @@ import '../../Styles/Found.css'
 import { useNavigate } from "react-router";
 import { fetchLatestCryptocurrencyForTraderBuy } from "../../State/Actions/BitcoinActions";
 import { fetchLatestCryptocurrencyForTraderSell } from "../../State/Actions/BitcoinActions";
-import { getTransfersAndTransactions } from "../../State/Actions/TraderActions";
+import { fetchTransactions } from "../../State/Actions/OrdersActions";
+import { fetchTransfers } from "../../State/Actions/TransfersActions";
 
 
 const FoundClient = (props) => {
@@ -28,7 +29,10 @@ const FoundClient = (props) => {
 
     const goToCancel = (e) => {
         e.preventDefault()
-        props.getTransfersAndTransactions(props.trader.client_id, navigate)
+        props.fetchTransfers(props.trader.client_id)
+        props.fetchTransactions(props.trader.client_id, navigate)
+
+
     }
 
     return (
@@ -74,7 +78,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     fetchLatestCryptocurrencyForTraderBuy,
     fetchLatestCryptocurrencyForTraderSell,
-    getTransfersAndTransactions
+    fetchTransactions,
+    fetchTransfers
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(FoundClient)

@@ -2,8 +2,15 @@ import '../Styles/Nav.css'
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from 'jwt-decode';
+import { getCancelLog } from '../State/Actions/TraderActions';
+import { connect } from 'react-redux';
+import { getBitcoinWallet } from '../State/Actions/ClientActions';
+import { fetchLatestCryptocurrencyForClientBuy } from '../State/Actions/BitcoinActions';
+import { fetchLatestCryptocurrencyForClientSell } from '../State/Actions/BitcoinActions';
+import { getPastOrders } from '../State/Actions/ClientActions';
 
-const SignedInNavigation = () => {
+
+const SignedInNavigation = (props) => {
     const navigate = useNavigate();
     const token = localStorage.getItem('token');
     let user_type = '';
@@ -23,6 +30,23 @@ const SignedInNavigation = () => {
 
     const navigateTo = (path) => (e) => {
         e.preventDefault()
+        if (path === '/TraderDashboard/Cancel-Log') {
+
+            props.getCancelLog(navigate)
+        }
+        else if (path === '/ClientDashboard/BitcoinWallet') {
+            props.getBitcoinWallet(navigate)
+        }
+        else if (path === '/ClientDashboard/BuyBitcoin') {
+            props.fetchLatestCryptocurrencyForClientBuy(navigate)
+        }
+        else if (path === '/ClientDashboard/SellBitcoin') {
+            props.fetchLatestCryptocurrencyForClientSell(navigate)
+        }
+        else if (path === '/ClientDashboard/Orders') {
+            props.getPastOrders(navigate)
+
+        }
 
         navigate(path);
     };
@@ -60,4 +84,23 @@ const SignedInNavigation = () => {
     );
 };
 
-export default SignedInNavigation;
+const mapStateToProps = (state) => {
+    return {
+
+        trader: state.traderReducer.trader,
+        trader_loading: state.traderReducer.loading,
+        error: state.traderReducer.error,
+        client: state.clientReducer.client,
+        client_loading: state.clientReducer.loading,
+        client_error: state.clientReducer.error
+    }
+}
+
+const mapDispatchToProps = {
+    getCancelLog,
+    fetchLatestCryptocurrencyForClientBuy,
+    fetchLatestCryptocurrencyForClientSell,
+    getBitcoinWallet,
+    getPastOrders
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SignedInNavigation)

@@ -5,6 +5,8 @@ import managerReducer from "./ManagerReducer";
 import clientReducer from "./ClientReducer";
 import { bitcoinReducer } from "./BitcoinReducer";
 import { traderReducer } from "./TraderReducer";
+import { ordersReducer } from './OrdersReducer'
+import { transfersReducer } from './TransfersReducer'
 
 const rootReducer = combineReducers({
     signupReducer,
@@ -12,7 +14,9 @@ const rootReducer = combineReducers({
     managerReducer,
     clientReducer,
     bitcoinReducer,
-    traderReducer
+    traderReducer,
+    ordersReducer,
+    transfersReducer
 })
 
 export default rootReducer

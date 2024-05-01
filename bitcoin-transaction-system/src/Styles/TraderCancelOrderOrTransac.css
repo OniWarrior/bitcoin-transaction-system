@@ -1,0 +1,24 @@
+.orders-list{
+    margin:auto;
+    display:flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    flex-wrap:wrap;
+}
+
+.transfers-list{
+    margin:auto;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    flex-wrap:wrap;
+}
+
+
+.box-container{
+   margin:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
